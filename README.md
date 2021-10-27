@@ -1,0 +1,2 @@
+# Trinix
+Discord Bot
