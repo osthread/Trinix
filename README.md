@@ -1,4 +1,4 @@
-#Trinix Discord Bot
+# Trinix Discord Bot
 
 About Trinix:
 * Trinix is a simple community bot
