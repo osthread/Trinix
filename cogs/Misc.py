@@ -65,7 +65,7 @@ class Misc(commands.Cog):
         x = requests.get(API)
         await ctx.author.send(x.text)
     
-    commands.command(name='sinvite')
+    @commands.command(name='sinvite')
     async def sinvite(self, ctx):
         invite = await ctx.channel_invite()
         await ctx.relpy(f"Here's your invite: {invite}")
