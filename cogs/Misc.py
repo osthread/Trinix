@@ -58,10 +58,9 @@ class Misc(commands.Cog):
         responses = 'Heres my invite link https://discord.com/oauth2/authorize?client_id=695402766268366949&permissions=8&scope=bot <3'
         await ctx.send(responses)
 
-    @commands.command(name="passgen", aliases=['pwg'])
+    @commands.command(name='passgen', aliases=['pwg'])
     async def passgen(self, ctx):
         API = "https://www.passwordrandom.com/query?command=password"
-
         x = requests.get(API)
         await ctx.author.send(x.text)
     
