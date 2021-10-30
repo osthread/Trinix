@@ -35,7 +35,7 @@ class Main(commands.Cog):
 
     @commands.command(name='ppsize')
     async def ppsize(self, ctx, member:discord.Member = None):
-        response = [f'{ctx.author.mention} your ppsize: 8=D', f'{ctx.author.mention} ppsize: 8========D', f'{ctx.author.mention} ppsize: 8=========D', f'{ctx.author.mention} ppsize: 8=================D', f'{ctx.author.mention} ppsize: 8===================D']
+        response = [f'{ctx.author.mention} ppsize: 8=D', f'{ctx.author.mention} ppsize: 8========D', f'{ctx.author.mention} ppsize: 8=========D', f'{ctx.author.mention} ppsize: 8=================D', f'{ctx.author.mention} ppsize: 8===================D']
         if (member == ctx.author or member == None):
             await ctx.reply(choice(response))
         else:
