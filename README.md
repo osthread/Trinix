@@ -2,7 +2,7 @@
 
 About Trinix:
 * Trinix is a simple community bot
-* I made Trinix because I was bored. Trinix Will be online 24/7 
+* Trinix will mainly be online 24/7.
 
 Contact me:
 * Discord: UnknownToska#8888
