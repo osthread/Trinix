@@ -28,7 +28,7 @@ client = commands.Bot(
 )
 
 @client.event
-async def on_ready():#This shows when the bot is online and working
+async def on_ready():
     await client.change_presence(activity=discord.Activity(type = discord.ActivityType.playing, name = ".help for commands | Maxie is my master <3"))#activity status
     print('|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||')
     print('████████ ██████  ██ ███    ██ ██ ██   ██      ██    ███████')
