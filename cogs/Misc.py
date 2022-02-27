@@ -1,3 +1,4 @@
+#Mind some of this code is from stackoverflow.
 #Required Imports
 import discord
 import datetime, time
@@ -13,7 +14,7 @@ class Misc(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(name='userinfo', aliasses=["whois"]) #this code was from stackoverflow
+    @commands.command(name='userinfo', aliasses=["whois"]) 
     async def userinfo(self, ctx, member: discord.Member = None):
         if not member:
             member = ctx.message.author
