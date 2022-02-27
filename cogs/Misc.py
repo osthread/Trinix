@@ -1,4 +1,4 @@
-#Mind some of this code is from stackoverflow.
+#Some of this code is from stackoverflow.
 #Required Imports
 import discord
 import datetime, time
