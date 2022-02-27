@@ -2,7 +2,7 @@
 #You may use Trinix but must give me cred
 #for anymore info just go to https://trinixbot.xyz
 #If you need to contact me for any reason my discord is UnknownToska#8888
-#This is just in case I ever open source thise.
+#This is just in case I ever open source this.
 #Required Imports
 import os
 import re
