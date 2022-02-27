@@ -2,10 +2,6 @@
 import discord
 from discord.ext import commands, tasks
 
-#links
-footer = "https://cdn.discordapp.com/attachments/888282878973194271/891935435859820574/default.png"
-thumbnail = "https://cdn.discordapp.com/attachments/888282878973194271/891935435859820574/default.png"
-
 class Help(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -21,8 +17,8 @@ class Help(commands.Cog):
         embed.add_field(name=":slight_smile: **Emotes**", value="`laugh`,`mad`,`bye`,`blush`,`sneeze`,`smile`,`thinking`", inline=False)
         embed.add_field(name=":hugging: **Actions**", value="`cuddle`,`feed`,`hug`,`kickk`,`kiss`,`pat`,`punch`,`slap`,`poke`,`dance`,`squeeze`,`handholding`", inline=False)
         embed.add_field(name=":newspaper: **News**", value="If Trinix isn't playing music please do .stop and replay the song.", inline=False)
-        embed.set_thumbnail(url= thumbnail)
-        embed.set_footer(text="Trinix Made by: Maxim", icon_url = footer)
+        embed.set_thumbnail(url= "https://cdn.discordapp.com/attachments/888282878973194271/891935435859820574/default.png")
+        embed.set_footer(text="Trinix Made by: Maxim", icon_url = "https://cdn.discordapp.com/attachments/888282878973194271/891935435859820574/default.png")
         embed.color = discord.Color.blurple()
         await ctx.reply(embed=embed, mention_author=False)
 
