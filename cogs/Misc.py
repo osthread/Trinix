@@ -63,11 +63,6 @@ class Misc(commands.Cog):
         API = "https://www.passwordrandom.com/query?command=password"
         x = requests.get(API)
         await ctx.author.send(x.text)
-    
-    @commands.command(name='sinvite')
-    async def sinvite(self, ctx):
-        invite = await ctx.channel_invite()
-        await ctx.relpy(f"Here's your invite: {invite}")
 
 def setup(bot): #Must have a setup function
     bot.add_cog(Misc(bot)) # Add the class to the cog.
