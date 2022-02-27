@@ -31,7 +31,7 @@ class Main(commands.Cog):
             await ctx.reply(choice(response))
         else:
             responses = [f'{member.mention} If laughter is the best medicine, your face must be curing the world.', f'{member.mention} Youre so ugly that when you tried to enter an ugly contest the judges said, "sorry, no professionals".', f'{member.mention} Youre so ugly that when you were born they had to put dark tints on your incubator.', f'{member.mention} Youre so ugly that when you went to the haunted house you came out with a job application.', f'{member.mention} Youre so ugly, when your mom dropped you off at school she got a fine for littering.', f'{member.mention} Youre so dumb that when you heard it was chilly outside you ran and got a bowl and spoon.', f'{member.mention} I am not saying that you are stupid, just that you are constantly unlucky when you try thinking.', f'{member.mention} Youre so hairy that when you come out of the shower it is like Gorillas In The Mist.', f'{member.mention} You are so old that when you pass away, there will be a worldwide race between paleontologists to dig you up.']
-            await ctx.send(choice(responses))
+            await ctx.reply(choice(responses))
 
     @commands.command(name='ppsize')
     async def ppsize(self, ctx, member:discord.Member = None):
@@ -40,7 +40,7 @@ class Main(commands.Cog):
             await ctx.reply(choice(response))
         else:
             responses = [f'here is {member.mention} ppsize: 8=D', f'here is {member.mention} ppsize: 8========D', f'here is {member.mention} ppsize: 8=========D', f'here is {member.mention} ppsize: 8=================D', f'here is {member.mention} ppsize: 8===================D']
-            await ctx.send(choice(responses))
+            await ctx.reply(choice(responses))
 
     @commands.command(name='coinflip', aliases=["flip", "coin"])
     async def coinflip(self, ctx):
