@@ -1,7 +1,7 @@
 # Trinix Discord Bot
 
 About Trinix:
-* Trinix is a simple community bot
+* Trinix is a simple community bot.
 * Trinix will mainly be online 24/7.
 
 Contact me:
