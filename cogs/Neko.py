@@ -1,8 +1,9 @@
 #Required Imports
-import random
-import discord
 from random import choice
 from discord.ext import commands, tasks
+
+import random
+import discord
 
 #Links
 feedGIF = "https://c.tenor.com/Aflxvrwa0woAAAAC/kawaii-wholesome.gif","https://c.tenor.com/Aflxvrwa0woAAAAC/kawaii-wholesome.gif","https://c.tenor.com/euV-iahrkMoAAAAC/radit-succ-anime-eat.gif","https://c.tenor.com/_Wn5KdSnphEAAAAd/anime-feed-anime.gif","https://c.tenor.com/xS09IqCS1e0AAAAd/anime-anime-boy.gif","https://c.tenor.com/JHqOKnXVNDQAAAAM/azunom-feed.gif","https://c.tenor.com/CHTk5L8ls8cAAAAd/eat-food.gif","https://c.tenor.com/gIbE9pZ7raYAAAAM/wataten-watashi-ni-tenshi-ga-maiorita.gif","https://c.tenor.com/255Z_vjnkF8AAAAM/anime-girl.gif","https://c.tenor.com/7iDuLLtmeogAAAAC/kin-iro-mosaic-kinmosa.gif","https://c.tenor.com/njHpJO9PoKYAAAAM/somali-somali-and-the-forest-spirit.gif","https://c.tenor.com/0NfPiObsw8QAAAAM/feed-ryuko.gif","https://c.tenor.com/pTKnWhT6FmMAAAAd/anime-feed.gif"  
@@ -27,6 +28,7 @@ thinkingGIF = "https://c.tenor.com/t80Qwz2QouMAAAAC/yuru-yuri-ayano-sugiura.gif"
 handholdingGIF = "https://c.tenor.com/WUZAwo5KFdMAAAAd/love-holding-hands.gif","https://c.tenor.com/6HrHMauHVbYAAAAC/hand-handholding.gif","https://c.tenor.com/QO3T5tZ4Ia4AAAAd/mai-sakurajima-rascal-does-not-dream-of-bunny-girl-senpai.gif","https://c.tenor.com/6734QJU2yOwAAAAC/yato-anime.gif","https://c.tenor.com/FOepfGFozJEAAAAd/holding-hands-couple.gif","https://c.tenor.com/pqve83ZQ8d8AAAAC/anime-shida-kuroha.gif","https://c.tenor.com/WLnNDNpc8-UAAAAd/konosuba-kono-subarashii.gif","https://c.tenor.com/5HKo-J3sklwAAAAC/walk-anime.gif","https://c.tenor.com/spo9s3TuhvsAAAAC/naruto-anime.gif","https://c.tenor.com/WrSGVKCUHHEAAAAC/hanako-blushing.gif","https://c.tenor.com/wC3hJXbQtYMAAAAd/touch-hands.gif"  
 smileGIF = "https://c.tenor.com/nBWlYPbKxzwAAAAC/anime-happy.gif","https://c.tenor.com/3fAZZncIHDQAAAAM/smile-anime.gif","https://c.tenor.com/B5mG_MXzno0AAAAC/anime-taiga-aisaka.gif","https://c.tenor.com/Q--iyrFnBw8AAAAC/anime-smile.gif","https://c.tenor.com/DbRVEHMsm-YAAAAC/yoruka-smile-yoruka.gif","https://c.tenor.com/PfMkNZdluAkAAAAC/haru-yoshida-tonari-no-kaibutsu-kun.gif","https://c.tenor.com/3EcCzBCBXbYAAAAC/yato-anime.gif","https://c.tenor.com/PuX9_sU4VToAAAAC/daddy-little.gif","https://c.tenor.com/kU3-dUX2y8cAAAAC/shy-worried.gif"  
 squeezeGIF = "https://c.tenor.com/iEXZT4FlC0EAAAAM/koisuru-asteroid-asteroid-in-love.gif","https://c.tenor.com/ixaDEFhZJSsAAAAC/anime-choke.gif","https://c.tenor.com/tX3V1uUJ4igAAAAC/chino-tighten.gif","https://c.tenor.com/OoNOnGP3xq4AAAAC/anime-thighs-anime-thighs-curshing.gif","https://c.tenor.com/0lbLTHLAqIMAAAAC/cute-fun.gif","https://c.tenor.com/EDJXYEkQu6MAAAAC/noragami-yato.gif","https://c.tenor.com/3eZH8PlHEDQAAAAC/tanakakun-squishy-face.gif","https://c.tenor.com/cg9Yp4fu7VQAAAAC/squishy-cheeky.gif"  
+biteGIF = "https://c.tenor.com/IKDf1NMrzsIAAAAM/anime-acchi-kocchi.gif","https://c.tenor.com/nkNsOraAx4AAAAAM/anime-bite.gif","https://c.tenor.com/w4T323o46uYAAAAM/anime-bite.gif","https://c.tenor.com/hwCVSWyji0QAAAAC/anime-bite.gif","https://tenor.com/4sAB.gif","https://c.tenor.com/mXc2f5NeOpgAAAAC/no-blood-neck-bite.gif","https://tenor.com/view/%E0%B8%87%E0%B9%88%E0%B8%B3%E0%B9%86-eat-bite-turtle-gif-15516240","https://c.tenor.com/view/bite-gif-19326440","https://c.tenor.com/view/bite-gif-22830209","https://c.tenor.com/1egHkU3e_8cAAAAC/girl-bite.gif"
 footer = "https://cdn.discordapp.com/attachments/888282878973194271/891935435859820574/default.png"
 
 class Neko(commands.Cog):
@@ -68,6 +70,24 @@ class Neko(commands.Cog):
                 embed = discord.Embed(color=discord.Color.blurple())
                 embed.set_image(url=random.choice(slapGIF))
                 embed.add_field(name="Trinix Bot", value=(slap))
+                embed.set_footer(text="Trinix Made by : Maxim", icon_url = footer)
+                await ctx.reply(embed=embed, mention_author=False) 
+
+    @commands.command(name = 'bite')
+    async def bite(self, ctx, member:discord.Member = None):
+            if (member == ctx.author or member == None):
+                bite = f"{ctx.author.mention} Bites Themselves..."
+                embed = discord.Embed(color=discord.Color.blurple())
+                embed.set_image(url=random.choice(biteGIF))
+                embed.add_field(name="Trinix Bot", value=bite)
+                embed.set_footer(text="Trinix Made by: Maxim", icon_url = footer)
+                await ctx.reply(embed=embed, mention_author=False) 
+            else:
+                biteResponse = [f"{ctx.author.mention} Bites {member.mention}",f"{member.mention} is being bitten by {ctx.author.mention}. !",f" {ctx.author.mention} Bites {member.mention}. FOR NO REASON!",]  
+                bite = random.choice(biteResponse)
+                embed = discord.Embed(color=discord.Color.blurple())
+                embed.set_image(url=random.choice(biteGIF))
+                embed.add_field(name="Trinix Bot", value=(bite))
                 embed.set_footer(text="Trinix Made by : Maxim", icon_url = footer)
                 await ctx.reply(embed=embed, mention_author=False) 
 
