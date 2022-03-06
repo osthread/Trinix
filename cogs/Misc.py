@@ -1,10 +1,12 @@
-#Some of this code is from stackoverflow.
+#Some of This code was from stackoverflow
 #Required Imports
+from discord.ext import commands, tasks
+from random import choice
+
 import discord
 import datetime, time
-import requests 
-from discord.ext import commands, tasks
-from random import choice 
+import requests
+
 
 start_time = time.time()
 
@@ -14,19 +16,18 @@ class Misc(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(name='userinfo', aliasses=["whois"]) 
+    @commands.command(name='userinfo', aliases=["whois"])
     async def userinfo(self, ctx, member: discord.Member = None):
-        if not member:
-            member = ctx.message.author
+        if not member: member = ctx.message.author
         roles = [role for role in member.roles]
         embed = discord.Embed(color=discord.Color.blurple(), timestamp=ctx.message.created_at, title=f"Trinix UserInfo - {member}")
         embed.set_thumbnail(url=member.avatar_url)
+        embed.set_footer(text=f"Requested by {ctx.author}")
         embed.add_field(name="Display Name:", value=member.display_name)
         embed.add_field(name="ID:", value=member.id)
         embed.add_field(name="Account Created On:", value=member.created_at.strftime("%a, %#d %B %Y, %I:%M %p UTC"))
         embed.add_field(name="Joined Server On:", value=member.joined_at.strftime("%a, %#d %B %Y, %I:%M %p UTC"))
-        embed.add_field(name="Role:", value=member.top_role.mention)
-        embed.set_footer(text=f"Requested by {ctx.author}")
+        embed.add_field(name="Highest Role:", value=member.top_role.mention)
         await ctx.send(embed=embed)
 
     @commands.command(name='uptime', aliases=['upt'])
