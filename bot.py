@@ -3,12 +3,14 @@
 #If you need to contact me for any reason my discord is UnknownToska#8888
 #This is just in case I ever open source this.
 #Required Imports
+
+from discord.ext import commands
+
 import os
 import re
-import json
 import cogs
+import json
 import discord
-from discord.ext import commands
 
 #Config
 if os.path.exists (os.getcwd() + "/config.json"):
@@ -28,8 +30,8 @@ client = commands.Bot(
 )
 
 @client.event
-async def on_ready():
-    await client.change_presence(activity=discord.Activity(type = discord.ActivityType.playing, name = ".help for commands | Maxie is my master <3"))#activity status
+async def on_ready():#This shows when the bot is online and working
+    await client.change_presence(activity=discord.Activity(type = discord.ActivityType.playing, name = "type ,help"))#activity status
     print('|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||')
     print('████████ ██████  ██ ███    ██ ██ ██   ██      ██    ███████')
     print('   ██    ██   ██ ██ ████   ██ ██  ██ ██      ███    ██     ')
@@ -45,6 +47,6 @@ for f in os.listdir("cogs"):
         pass
     elif re.match(r".*\.py", f):
         client.load_extension("cogs." + f.replace(".py", ""))
-        
+
 #Token
 client.run(token)#you put your bot token inside of config.json
