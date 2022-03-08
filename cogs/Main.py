@@ -8,6 +8,7 @@ import random
 import requests
 import http
 
+#I put this here so I dont have to keep putting the link in the embeds
 footer = "https://cdn.discordapp.com/attachments/888282878973194271/891935435859820574/default.png"
 
 class Main(commands.Cog):
