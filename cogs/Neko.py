@@ -7,7 +7,7 @@ import random
 import discord
 import requests
 
-class nekos(commands.Cog):
+class Neko(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -30,4 +30,4 @@ class nekos(commands.Cog):
                     await ctx.send(embed=embed)
 
 def setup(bot): #Must have a setup function
-    bot.add_cog(nekos(bot)) # Add the class to the cog.
+    bot.add_cog(Neko(bot)) # Add the class to the cog.
