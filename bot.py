@@ -3,14 +3,9 @@
 #If you need to contact me for any reason my discord is UnknownToska#8888
 #This is just in case I ever open source this.
 #Required Imports
-
 from discord.ext import commands
 
-import os
-import re
-import cogs
-import json
-import discord
+import discord, cogs, json, re, os
 
 #Config
 if os.path.exists (os.getcwd() + "/config.json"):
@@ -24,12 +19,12 @@ token = configData["Token"]
 prefix = configData["Prefix"]
 owner = configData["Owner"]
 
-client = commands.Bot(
+Trinix = commands.Bot(
         command_prefix = commands.when_mentioned_or(prefix),#Bot prefix if you wanna chnage this just go into config.json
         help_command = None #Help category. I disabled this because i am using a custom help
 )
 
-@client.event
+@Trinix.event
 async def on_ready():#This shows when the bot is online and working
     await client.change_presence(activity=discord.Activity(type = discord.ActivityType.playing, name = "type ,help"))#activity status
     print('|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||')
@@ -46,7 +41,7 @@ for f in os.listdir("cogs"):
     if re.match(r".*\.py.swp", f):
         pass
     elif re.match(r".*\.py", f):
-        client.load_extension("cogs." + f.replace(".py", ""))
+        Trinix.load_extension("cogs." + f.replace(".py", ""))
 
 #Token
-client.run(token)#you put your bot token inside of config.json
+Trinix.run(token)#you put your bot token inside of config.json
