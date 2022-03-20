@@ -1,16 +1,15 @@
 #Required Imports
-from discord import message
 from discord.ext import commands, tasks
+from discord import message
 
-import discord
-import datetime
+import discord, datetime
 
 class Mod(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
     #Admin Commands
-    @commands.command(name='clear', aliases= ['purge','delete'])
+    @commands.command(aliases= ['purge','delete'])
     @commands.has_permissions(administrator=True)#This makes it where only admins can use this command
     async def clear(self, ctx, amount=1000):
         channel = ctx.message.channel
@@ -23,7 +22,7 @@ class Mod(commands.Cog):
         embed=discord.Embed(title="Trinix Mod System", description=message, color=0xff0000)
         await ctx.send(embed=embed)
 
-    @commands.command(name='kick')
+    @commands.command()
     @commands.has_permissions(kick_members = True)#This makes it where only admins can use this command
     async def kick(self, ctx, member: discord.Member, *, why=None):
         await member.kick(reason=why)
@@ -31,7 +30,7 @@ class Mod(commands.Cog):
         embed=discord.Embed(title="Trinix Mod System", description=message, color=0xff0000)
         await ctx.send(embed=embed)
 
-    @commands.command(name='ban')
+    @commands.command()
     @commands.has_permissions(ban_members = True)
     async def ban(self, ctx, member : discord.Member, *, reason = None):
         await member.ban(reason = reason)
@@ -39,7 +38,7 @@ class Mod(commands.Cog):
         embed=discord.Embed(title="Trinix Mod System", description=message, color=0xff0000)
         await ctx.send(embed=embed)
 
-    @commands.command(name='unban')
+    @commands.command()
     @commands.has_permissions(administrator = True)#This makes it where only admins can use this command
     async def unban(self, ctx, *, member):
         banned_users = await ctx.guild.bans()
