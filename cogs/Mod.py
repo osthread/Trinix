@@ -1,6 +1,6 @@
 #Required Imports
-from discord import message
 from discord.ext import commands, tasks
+from discord import message
 
 import discord, datetime
 
