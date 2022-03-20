@@ -1,9 +1,8 @@
 #Required Imports
-from discord import message
 from discord.ext import commands, tasks
+from discord import message
 
 import discord
-
 
 class listener(commands.Cog):
     def __init__(self, bot):
