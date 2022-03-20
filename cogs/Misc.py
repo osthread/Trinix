@@ -3,10 +3,7 @@
 from discord.ext import commands, tasks
 from random import choice
 
-import discord
-import datetime, time
-import requests
-
+import discord, datetime, time, requests
 
 start_time = time.time()
 
@@ -16,7 +13,7 @@ class Misc(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(name='userinfo', aliases=["whois"])
+    @commands.command(aliases=["whois"])
     async def userinfo(self, ctx, member: discord.Member = None):
         if not member: member = ctx.message.author
         roles = [role for role in member.roles]
@@ -30,7 +27,7 @@ class Misc(commands.Cog):
         embed.add_field(name="Highest Role:", value=member.top_role.mention)
         await ctx.send(embed=embed)
 
-    @commands.command(name='uptime', aliases=['upt'])
+    @commands.command(aliases=['upt'])
     async def uptime(self, ctx):
         current_time = time.time()
         difference = int(round(current_time - start_time))
@@ -43,23 +40,23 @@ class Misc(commands.Cog):
         except discord.HTTPException:
             await ctx.send("Current uptime: " + text)
 
-    @commands.command(name='ping', aliases=["ms"])
+    @commands.command(aliases=["ms"])
     async def ping(self, ctx):
         await ctx.send(f'My Server Ping ({round(self.bot.latency * 1000)}ms)')
 
-    @commands.command(name='website')
+    @commands.command()
     async def website(self, ctx):
         embed=discord.Embed(title="Trinix Bot", description= "Website: https://trinixbot.xyz/", color = discord.Color.blurple())
         embed.add_field(name="Thank you for using Trinix", value="If you need any support join the discord", inline=False)
         embed.set_footer(text="Trinix Made by: Maxim", icon_url = footer)
         await ctx.send(embed=embed)
 
-    @commands.command(name='oauth')
+    @commands.command()
     async def oauth(self, ctx):
         responses = 'Heres my invite link https://discord.com/oauth2/authorize?client_id=695402766268366949&permissions=8&scope=bot <3'
         await ctx.send(responses)
 
-    @commands.command(name='passgen', aliases=['pwg'])
+    @commands.command(aliases=['pwg'])
     async def passgen(self, ctx):
         API = "https://www.passwordrandom.com/query?command=password"
         x = requests.get(API)
