@@ -1,11 +1,9 @@
 #3/17/2020 I have updated neko commads
 #Required Imports
-from random import choice
 from discord.ext import commands, tasks
+from random import choice
 
-import random
-import discord
-import requests
+import discord, random, request
 
 class Neko(commands.Cog):
     def __init__(self, bot):
