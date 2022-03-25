@@ -12,10 +12,10 @@ class Mod(commands.Cog):
     @commands.command(aliases= ['purge','delete','clean'])
     @commands.has_permissions(administrator=True)
     async def clean(self, ctx, limit: int):
-            await ctx.channel.purge(limit=limit)
-            message = f'{limit} messages have been purged by {ctx.message.author.mention}'
-            embed=discord.Embed(title="Trinix Mod System", description=message, color=0x7289da)
-            await ctx.send(embed=embed)
+        await ctx.channel.purge(limit=limit)
+        message = f'{limit} messages have been purged by {ctx.message.author.mention}'
+        embed=discord.Embed(title="Trinix Mod System", description=message, color=0x7289da)
+        await ctx.send(embed=embed)
 
     @commands.command()
     @commands.has_permissions(kick_members = True)# This makes it where only admins can use this command
