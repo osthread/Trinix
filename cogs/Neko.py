@@ -1,4 +1,4 @@
-#3/17/2020 I have updated neko commads
+#3/17/2022 I have updated neko commads
 #Required Imports
 from discord.ext import commands, tasks
 from random import choice
