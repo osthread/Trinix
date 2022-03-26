@@ -26,7 +26,7 @@ Trinix = commands.Bot(
 
 @Trinix.event
 async def on_ready():
-    await client.change_presence(activity=discord.Activity(type = discord.ActivityType.playing, name = "type ,help"))#activity status
+    await Trinix.change_presence(activity=discord.Activity(type = discord.ActivityType.playing, name = "type ,help"))#activity status
     print('|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||')
     print('████████ ██████  ██ ███    ██ ██ ██   ██      ██    ███████')
     print('   ██    ██   ██ ██ ████   ██ ██  ██ ██      ███    ██     ')
