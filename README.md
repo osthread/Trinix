@@ -3,7 +3,7 @@
 * Language: Python
 
 ### Contact Me:
-* Discord: UnknownToska#8888
+* Discord: lul#8888
 
 ### Installation:
 - OS Ubuntu 20.04 (Any os will work I just use Ubuntu)
