@@ -19,10 +19,9 @@ token = configData["Token"]
 prefix = configData["Prefix"]
 owner = configData["Owner"]
 
-Trinix = commands.Bot(
-        command_prefix = commands.when_mentioned_or(prefix),#Bot prefix if you wanna chnage this just go into config.json
-        help_command = None #Help category. I disabled this because i am using a custom help
-)
+intents = discord.Intents.all()
+intents.members = True
+Trinix = commands.Bot(command_prefix= (get_prefix), help_command = None, intents = intents)
 
 @Trinix.event
 async def on_ready():
