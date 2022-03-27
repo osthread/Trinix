@@ -35,12 +35,15 @@ class Mod(commands.Cog):
 
     @commands.command()
     @commands.has_permissions(administrator = True)# This makes it where only admins can use this command
-    async def unban(self, ctx, id):
+    async def unban(self, ctx, id): #Unban by Panda <3
         b = await ctx.guild.bans()
         for i in b:
             u = i.user
             if u.id == id:
                 await ctx.guild.unban(u)
+                embed=discord.Embed(title="Trinix Mod System", description=f"{u} has been unbanned", color=0x7289da)
+                embed.set_footer(text=f"{ctx.message.guild.name}", icon_url = ctx.guild.icon_url)
+                await ctx.send(embed=embed)
 
     @commands.command()
     @commands.has_permissions(administrator=True)
