@@ -21,7 +21,7 @@ owner = configData["Owner"]
 
 intents = discord.Intents.all()
 intents.members = True
-Trinix = commands.Bot(command_prefix= (get_prefix), help_command = None, intents = intents)
+Trinix = commands.Bot(command_prefix=(get_prefix), help_command = None, intents = intents)
 
 @Trinix.event
 async def on_ready():
