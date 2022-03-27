@@ -1,6 +1,6 @@
 #Required Imports
-from discord.ext import commands, tasks
 from discord import message
+from discord.ext import commands, tasks
 
 import discord, datetime
 
@@ -12,10 +12,10 @@ class Mod(commands.Cog):
     @commands.command(aliases= ['purge','delete','clean'])
     @commands.has_permissions(administrator=True)
     async def clean(self, ctx, limit: int):
-        await ctx.channel.purge(limit=limit)
-        message = f'{limit} messages have been purged by {ctx.message.author.mention}'
-        embed=discord.Embed(title="Trinix Mod System", description=message, color=0x7289da)
-        await ctx.send(embed=embed)
+            await ctx.channel.purge(limit=limit)
+            message = f'{limit} messages have been purged by {ctx.message.author.mention}'
+            embed=discord.Embed(title="Trinix Mod System", description=message, color=0x7289da)
+            await ctx.send(embed=embed)
 
     @commands.command()
     @commands.has_permissions(kick_members = True)# This makes it where only admins can use this command
@@ -35,17 +35,12 @@ class Mod(commands.Cog):
 
     @commands.command()
     @commands.has_permissions(administrator = True)# This makes it where only admins can use this command
-    async def unban(self, ctx, *, member):
-        banned_users = await ctx.guild.bans()
-        member_name, member_discriminator = member.split("#")
-
-        for ban_entry in banned_users:
-            user = ban_entry.user
-
-            if (user.name, user.discriminator) == (member_name, member_discriminator):
-                await ctx.guild.unban(user)
-                await ctx.send(f'Unbanned {user.mention}')
-                return
+    async def unban(self, ctx, id):
+        b = await ctx.guild.bans()
+        for i in b:
+            u = i.user
+            if u.id == id:
+                await ctx.guild.unban(u)
 
     @commands.command()
     @commands.has_permissions(administrator=True)
