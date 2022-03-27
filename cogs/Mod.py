@@ -15,6 +15,7 @@ class Mod(commands.Cog):
             await ctx.channel.purge(limit=limit)
             message = f'{limit} messages have been purged by {ctx.message.author.mention}'
             embed=discord.Embed(title="Trinix Mod System", description=message, color=0x7289da)
+            embed.set_footer(text=f"{ctx.message.guild.name}", icon_url = ctx.guild.icon_url)
             await ctx.send(embed=embed)
 
     @commands.command()
@@ -23,6 +24,7 @@ class Mod(commands.Cog):
         await member.kick(reason=why)
         message = f"**{member} has been kicked from this server by {ctx.message.author.mentionr}**"
         embed=discord.Embed(title="Trinix Mod System", description=message, color=0x7289da)
+        embed.set_footer(text=f"{ctx.message.guild.name}", icon_url = ctx.guild.icon_url)
         await ctx.send(embed=embed)
 
     @commands.command()
@@ -31,6 +33,7 @@ class Mod(commands.Cog):
         await member.ban(reason = reason)
         message = f'**{member} has been banned from this server by {ctx.message.author.mention}**'
         embed=discord.Embed(title="Trinix Mod System", description=message, color=0x7289da)
+        embed.set_footer(text=f"{ctx.message.guild.name}", icon_url = ctx.guild.icon_url)
         await ctx.send(embed=embed)
 
     @commands.command()
