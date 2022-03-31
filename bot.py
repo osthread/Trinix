@@ -8,20 +8,15 @@ from discord.ext import commands
 import discord, cogs, json, re, os
 
 #Config
-if os.path.exists (os.getcwd() + "/config.json"):
-    with open("./config.json") as f:
-        configData = json.load(f)
-else:
-    configTemplate = {"Token": "", "Prefix": "", "Owner": ""}
-    with open(os.getcwd() +"/config.json", "w+") as f:json.dump (configTemplate, f)
+with open("config.json", "r") as confjson:
+	configData = json.load(confjson)
 
 token = configData["Token"]
 prefix = configData["Prefix"]
-owner = configData["Owner"]
 
 intents = discord.Intents.all()
 intents.members = True
-Trinix = commands.Bot(command_prefix=(get_prefix), help_command = None, intents = intents)
+Trinix = commands.Bot(command_prefix=(gprefix), help_command = None, intents = intents)
 
 @Trinix.event
 async def on_ready():
