@@ -16,7 +16,7 @@ prefix = configData["Prefix"]
 
 intents = discord.Intents.all()
 intents.members = True
-Trinix = commands.Bot(command_prefix=(gprefix), help_command = None, intents = intents)
+Trinix = commands.Bot(command_prefix=(prefix), help_command = None, intents = intents)
 
 @Trinix.event
 async def on_ready():
