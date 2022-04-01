@@ -4,7 +4,7 @@ from discord.ext import commands, tasks
 
 import discord, datetime
 
-class Mod(commands.Cog):
+class mod(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -15,7 +15,6 @@ class Mod(commands.Cog):
             await ctx.channel.purge(limit=limit)
             message = f'{limit} messages have been purged by {ctx.message.author.mention}'
             embed=discord.Embed(title="Trinix Mod System", description=message, color=0x7289da)
-            embed.set_footer(text=f"{ctx.message.guild.name}", icon_url = ctx.guild.icon_url)
             await ctx.send(embed=embed)
 
     @commands.command()
@@ -24,7 +23,6 @@ class Mod(commands.Cog):
         await member.kick(reason=why)
         message = f"**{member} has been kicked from this server by {ctx.message.author.mentionr}**"
         embed=discord.Embed(title="Trinix Mod System", description=message, color=0x7289da)
-        embed.set_footer(text=f"{ctx.message.guild.name}", icon_url = ctx.guild.icon_url)
         await ctx.send(embed=embed)
 
     @commands.command()
@@ -33,7 +31,6 @@ class Mod(commands.Cog):
         await member.ban(reason = reason)
         message = f'**{member} has been banned from this server by {ctx.message.author.mention}**'
         embed=discord.Embed(title="Trinix Mod System", description=message, color=0x7289da)
-        embed.set_footer(text=f"{ctx.message.guild.name}", icon_url = ctx.guild.icon_url)
         await ctx.send(embed=embed)
 
     @commands.command()
@@ -44,8 +41,7 @@ class Mod(commands.Cog):
             u = i.user
             if u.id == id:
                 await ctx.guild.unban(u)
-                embed=discord.Embed(title="Trinix Mod System", description=f"{u} has been unbanned", color=0x7289da)
-                embed.set_footer(text=f"{ctx.message.guild.name}", icon_url = ctx.guild.icon_url)
+                embed=discord.Embed(title="Trinix Mod System", description=f"{u} has been unbanned", color=0xff0000)
                 await ctx.send(embed=embed)
 
     @commands.command()
@@ -57,4 +53,4 @@ class Mod(commands.Cog):
         await ctx.send(embed=embed)
 
 def setup(bot): # Must have a setup function
-        bot.add_cog(Mod(bot)) # Add the class to the cog.
+        bot.add_cog(mod(bot)) # Add the class to the cog.
