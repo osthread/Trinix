@@ -7,9 +7,7 @@ import discord, datetime, time, requests
 
 start_time = time.time()
 
-footer = "https://cdn.discordapp.com/attachments/888282878973194271/891935435859820574/default.png"
-
-class Misc(commands.Cog):
+class misc(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -19,7 +17,7 @@ class Misc(commands.Cog):
         roles = [role for role in member.roles]
         embed = discord.Embed(color=discord.Color.blurple(), timestamp=ctx.message.created_at, title=f"Trinix UserInfo - {member}")
         embed.set_thumbnail(url=member.avatar_url)
-        embed.set_footer(text=f"Requested by {ctx.author}")
+        embed.set_ctx.guild.icon_url(text=f"Requested by {ctx.author}")
         embed.add_field(name="Display Name:", value=member.display_name)
         embed.add_field(name="ID:", value=member.id)
         embed.add_field(name="Account Created On:", value=member.created_at.strftime("%a, %#d %B %Y, %I:%M %p UTC"))
@@ -34,7 +32,7 @@ class Misc(commands.Cog):
         text = 'Tirnix Up time: ' + str(datetime.timedelta(seconds=difference)) + ''
         embed = discord.Embed(color=discord.Color.blurple())
         embed.add_field(name="Uptime", value=text)
-        embed.set_footer(text="Trinix Made by: Maxim", icon_url = footer)
+        embed.set_ctx.guild.icon_url(text="Trinix", icon_url = ctx.guild.icon_url)
         try:
             await ctx.send(embed=embed)
         except discord.HTTPException:
@@ -48,7 +46,7 @@ class Misc(commands.Cog):
     async def website(self, ctx):
         embed=discord.Embed(title="Trinix Bot", description= "Website: https://trinixbot.xyz/", color = discord.Color.blurple())
         embed.add_field(name="Thank you for using Trinix", value="If you need any support join the discord", inline=False)
-        embed.set_footer(text="Trinix Made by: Maxim", icon_url = footer)
+        embed.set_ctx.guild.icon_url(text="Trinix", icon_url = ctx.guild.icon_url)
         await ctx.send(embed=embed)
 
     @commands.command()
@@ -63,4 +61,4 @@ class Misc(commands.Cog):
         await ctx.author.send(x.text)
 
 def setup(bot): #Must have a setup function
-    bot.add_cog(Misc(bot)) # Add the class to the cog.
+    bot.add_cog(misc(bot)) # Add the class to the cog.
