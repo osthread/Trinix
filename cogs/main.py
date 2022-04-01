@@ -5,6 +5,9 @@ from io import BytesIO
 
 import discord, random, requests, http
 
+#API
+api = 'https://api.truthordarebot.xyz/v1/'
+
 class main(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -97,7 +100,7 @@ class main(commands.Cog):
     @commands.command()
     async def truth(self, ctx):
         endpoint = 'truth'
-        r = requests.get( url = f'https://api.truthordarebot.xyz/v1/{endpoint}')
+        r = requests.get(api + endpoint)
         embed = discord.Embed(title="Trinix Truth Gen")
         embed.add_field(name="Truth Question", value=(r.json()["question"]), inline=False)
         embed.set_ctx.guild.icon_url(text="Trinix", icon_url = ctx.guild.icon_url)
@@ -107,7 +110,7 @@ class main(commands.Cog):
     @commands.command()
     async def truth(self, ctx):
         endpoint = 'dare'
-        r = requests.get( url = f'https://api.truthordarebot.xyz/v1/{endpoint}')
+        r = requests.get(api + endpoint)
         embed = discord.Embed(title="Trinix Dare Gen")
         embed.add_field(name="Dare", value=(r.json()["question"]), inline=False)
         embed.set_ctx.guild.icon_url(text="Trinix", icon_url = ctx.guild.icon_url)
@@ -117,7 +120,7 @@ class main(commands.Cog):
     @commands.command()
     async def wyr(self, ctx):
         endpoint = 'wyr'
-        r = requests.get( url = f'https://api.truthordarebot.xyz/v1/{endpoint}')
+        r = requests.get(api + endpoint)
         embed = discord.Embed(title="Trinix Would You Rather Gen")
         embed.add_field(name="Would You Rather Question", value=(r.json()["question"]), inline=False)
         embed.set_ctx.guild.icon_url(text="Trinix", icon_url = ctx.guild.icon_url)
@@ -127,7 +130,7 @@ class main(commands.Cog):
     @commands.command()
     async def nhie(self, ctx):
         endpoint = 'nhie'
-        r = requests.get( url = f'https://api.truthordarebot.xyz/v1/{endpoint}')
+        r = requests.get(api + endpoint)
         embed = discord.Embed(title="Trinix Never Have I Ever Gen")
         embed.add_field(name="Never Have I Ever Question", value=(r.json()["question"]), inline=False)
         embed.set_ctx.guild.icon_url(text="Trinix", icon_url = ctx.guild.icon_url)
@@ -137,7 +140,7 @@ class main(commands.Cog):
     @commands.command()
     async def paranoia(self, ctx):
         endpoint = 'paranoia'
-        r = requests.get( url = f'https://api.truthordarebot.xyz/v1/{endpoint}')
+        r = requests.get(api + endpoint)
         embed = discord.Embed(title="Trinix Paranoia Gen")
         embed.add_field(name="Paranoia Question", value=(r.json()["question"]), inline=False)
         embed.set_ctx.guild.icon_url(text="Trinix", icon_url = ctx.guild.icon_url)
