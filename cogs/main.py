@@ -5,10 +5,7 @@ from io import BytesIO
 
 import discord, random, requests, http
 
-#I put this here so I dont have to keep putting the link in the embeds
-footer = "https://cdn.discordapp.com/attachments/888282878973194271/891935435859820574/default.png"
-
-class Main(commands.Cog):
+class main(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -46,7 +43,7 @@ class Main(commands.Cog):
         coinside = ["Heads", "Tails"]
         coin = f"**{ctx.author.name}** flipped a coin and got **{random.choice(coinside)}**!"
         embed=discord.Embed(title="Trinix Bot", color = discord.Color.blurple())
-        embed.set_footer(text="Trinix made by: Maxim", icon_url=footer)
+        embed.set_ctx.guild.icon_url(text="Trinix", icon_url=ctx.guild.icon_url)
         embed.add_field(name="Results", value=coin, inline=False)
         await ctx.reply(embed=embed, mention_author=False)
 
@@ -57,13 +54,13 @@ class Main(commands.Cog):
         if (member == ctx.author or member == None ):
             embed=discord.Embed(title="Trinix Rate", description="", color = discord.Color.blurple())
             embed.add_field(name="Results", value=rateSelfResponse, inline=False)
-            embed.set_footer(text="Trinix Made by: Maxim", icon_url = footer)
+            embed.set_ctx.guild.icon_url(text="Trinix", icon_url = ctx.guild.icon_url)
             await ctx.reply(embed=embed, mention_author=False)
         else:
             ratea = f"I'd rate {member.mention} a **{round(rate)} / 10**"
             embed=discord.Embed(title="Trinix Rate", description="", color = discord.Color.blurple())
             embed.add_field(name="Results", value=ratea, inline=False)
-            embed.set_footer(text="Trinix Made by: Maxim", icon_url = footer)
+            embed.set_ctx.guild.icon_url(text="Trinix", icon_url = ctx.guild.icon_url)
             await ctx.reply(embed=embed, mention_author=False)
 
     @commands.command(aliases=["sr"])
@@ -73,14 +70,79 @@ class Main(commands.Cog):
         if (member == ctx.author or member == None ):
             embed=discord.Embed(title="Trinix Simp Rate", description="", color = discord.Color.blurple())
             embed.add_field(name="Results", value=simprateSelfResponse, inline=False)
-            embed.set_footer(text="Trinix Made by: Maxim", icon_url = footer)
+            embed.set_ctx.guild.icon_url(text="Trinix", icon_url = ctx.guild.icon_url)
             await ctx.reply(embed=embed, mention_author=False)
         else:
             ratea = f"{member.mention} is **{round(rate)} %** a simp"
             embed=discord.Embed(title="Trinix Rate", description="", color = discord.Color.blurple())
             embed.add_field(name="Results", value=ratea, inline=False)
-            embed.set_footer(text="Trinix Made by: Maxim", icon_url = footer)
+            embed.set_ctx.guild.icon_url(text="Trinix", icon_url = ctx.guild.icon_url)
             await ctx.reply(embed=embed, mention_author=False)
 
+    @commands.command()
+    async def geolocate(self, ctx, ip):
+        r = requests.get( url = f'https://ipinfo.io/{ip}/geo')
+        embed = discord.Embed(title="Trinix Geo Location")
+        embed.add_field(name="Ip", value=(r.json()["ip"]), inline=False)
+        embed.add_field(name="City", value=(r.json()["city"]), inline=False)
+        embed.add_field(name="Region", value=(r.json()["region"]), inline=False)
+        embed.add_field(name="Country", value=(r.json()["country"]), inline=False)
+        embed.add_field(name="Location", value=(r.json()["loc"]), inline=False)
+        embed.add_field(name="Org", value=(r.json()["org"]), inline=False)
+        embed.add_field(name="Timezone", value=(r.json()["timezone"]), inline=False)
+        embed.set_ctx.guild.icon_url(text="Trinix", icon_url = ctx.guild.icon_url)
+        embed.color = discord.Color.blurple()
+        await ctx.send(embed=embed)
+
+    @commands.command()
+    async def truth(self, ctx):
+        endpoint = 'truth'
+        r = requests.get( url = f'https://api.truthordarebot.xyz/v1/{endpoint}')
+        embed = discord.Embed(title="Trinix Truth Gen")
+        embed.add_field(name="Truth Question", value=(r.json()["question"]), inline=False)
+        embed.set_ctx.guild.icon_url(text="Trinix", icon_url = ctx.guild.icon_url)
+        embed.color = discord.Color.blurple()
+        await ctx.send(embed=embed)
+
+    @commands.command()
+    async def truth(self, ctx):
+        endpoint = 'dare'
+        r = requests.get( url = f'https://api.truthordarebot.xyz/v1/{endpoint}')
+        embed = discord.Embed(title="Trinix Dare Gen")
+        embed.add_field(name="Dare", value=(r.json()["question"]), inline=False)
+        embed.set_ctx.guild.icon_url(text="Trinix", icon_url = ctx.guild.icon_url)
+        embed.color = discord.Color.blurple()
+        await ctx.send(embed=embed)
+
+    @commands.command()
+    async def wyr(self, ctx):
+        endpoint = 'wyr'
+        r = requests.get( url = f'https://api.truthordarebot.xyz/v1/{endpoint}')
+        embed = discord.Embed(title="Trinix Would You Rather Gen")
+        embed.add_field(name="Would You Rather Question", value=(r.json()["question"]), inline=False)
+        embed.set_ctx.guild.icon_url(text="Trinix", icon_url = ctx.guild.icon_url)
+        embed.color = discord.Color.blurple()
+        await ctx.send(embed=embed)
+
+    @commands.command()
+    async def nhie(self, ctx):
+        endpoint = 'nhie'
+        r = requests.get( url = f'https://api.truthordarebot.xyz/v1/{endpoint}')
+        embed = discord.Embed(title="Trinix Never Have I Ever Gen")
+        embed.add_field(name="Never Have I Ever Question", value=(r.json()["question"]), inline=False)
+        embed.set_ctx.guild.icon_url(text="Trinix", icon_url = ctx.guild.icon_url)
+        embed.color = discord.Color.blurple()
+        await ctx.send(embed=embed)
+
+    @commands.command()
+    async def paranoia(self, ctx):
+        endpoint = 'paranoia'
+        r = requests.get( url = f'https://api.truthordarebot.xyz/v1/{endpoint}')
+        embed = discord.Embed(title="Trinix Paranoia Gen")
+        embed.add_field(name="Paranoia Question", value=(r.json()["question"]), inline=False)
+        embed.set_ctx.guild.icon_url(text="Trinix", icon_url = ctx.guild.icon_url)
+        embed.color = discord.Color.blurple()
+        await ctx.send(embed=embed)
+
 def setup(bot): #Must have a setup function
-    bot.add_cog(Main(bot)) # Add the class to the cog.
+    bot.add_cog(main(bot)) # Add the class to the cog.
