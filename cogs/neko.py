@@ -4,7 +4,6 @@ from random import choice
 
 import discord, random, requests
 
-
 api = 'https://neko-love.xyz/api/v1/'
 
 class nekos(commands.Cog):
