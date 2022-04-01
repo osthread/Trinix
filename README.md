@@ -3,7 +3,7 @@
 * Language: Python
 
 ### Contact Me:
-* Discord: lul#8888
+* Discord: lulz#1468
 
 ### Installation:
 - OS Debian 11
