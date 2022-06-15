@@ -1,4 +1,4 @@
-### About Trinix:
+### About Trinix
 * Trinix is a simple community bot.
 * Language: Python
 
