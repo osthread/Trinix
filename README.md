@@ -2,7 +2,7 @@
 * Trinix is a simple community bot.
 * Language: Python
 
-### Contact Me:
+### Contact Me
 * Discord: Maxie#0008
 
 ### Installation
@@ -10,7 +10,7 @@
 - Python Version 3.9
 Debian Based Systems
 _________________________
-Updating Your System:
+Updating Your System
 
 apt update
 
@@ -19,7 +19,7 @@ apt upgrade (optional)
 apt autoremove (optional)
 
 _________________________
-Installation:
+Installation
 
 apt install npm
 
@@ -39,7 +39,7 @@ pip3 install cogs
 
 pip3 install requests
 _________________________
-Running / Useage:
+Running / Useage
 
 pm2 start Trinix.py --interpreter python3
 
