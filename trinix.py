@@ -1,14 +1,19 @@
-#Trinix was made by Maxie. Trinix is fully free and will be up 24/7
+#Trinix was made by Maxim. Trinix is fully free and will be up 24/7
 #If you need to contact me for any reason my discord is Maxie#0008
 #This is just in case I ever open source this.
-#Required Imports
+
+# ---------------------------------------------------------------- Required Imports ----------------------------------------------------------------
+
 from discord.ext import commands
 
 import discord, re, json, os
 
-#Config
+# ---------------------------------------------------------------- Config ----------------------------------------------------------------
+
 with open("config.json", "r") as confjson:
 	configData = json.load(confjson)
+
+# ---------------------------------------------------------------- Trinix ----------------------------------------------------------------
 
 def main():
 
@@ -40,3 +45,5 @@ def main():
 
 if __name__=="__main__":
     main()
+
+# --------------------------------------------------------------------------------------------------------------------------------
