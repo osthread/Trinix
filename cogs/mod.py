@@ -21,7 +21,7 @@ class mod(commands.Cog):
         await ctx.send(embed=embed)
 
     @commands.command()
-    @commands.has_permissions(ban_members = True)
+    @commands.has_permissions(kick_members = True)
     async def kick(self, ctx, member : discord.Member, reason = None):
         if reason == None:
             await ctx.channel.purge(limit=1)
