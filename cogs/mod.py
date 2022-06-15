@@ -18,36 +18,38 @@ class mod(commands.Cog):
         await ctx.channel.purge(limit=1)
         await ctx.channel.purge(limit=limit)
         embed=discord.Embed(title="Trinix Mod System", description=f'{ctx.author.mention} Has Purged {limit} Messages!', color=0x7289da)
-        await ctx.respond(embed=embed)
-
-    @commands.command()
-    @commands.has_permissions(kick_members = True)
-    async def kick(self, ctx, member: discord.Member, reason):
-        if reason == None:
-            await ctx.channel.purge(limit=1)
-            await member.kick(reason="None")
-            embed=discord.Embed(title="Trinix Mod System", description=f"{member.mention} has been kicked from this server", color=0x7289da)
-            await ctx.respond(embed=embed)
-        else:
-            await ctx.channel.purge(limit=1)
-            await member.kick(reason=reason)
-            embed=discord.Embed(title="Trinix Mod System", description=f"{member.mention} has been kicked from this server", color=0x7289da)
-            await ctx.respond(embed=embed)
+        await ctx.send(embed=embed)
 
     @commands.command()
     @commands.has_permissions(ban_members = True)
-    async def ban(self, ctx, member : discord.Member, reason):
+    async def kick(self, ctx, member : discord.Member, reason = None):
         if reason == None:
             await ctx.channel.purge(limit=1)
-            await member.ban(reason = "None")
-            message = f'**{member.mention} has been banned from this server**'
-            embed=discord.Embed(title="Trinix Mod System", description=message, color=0x7289da)
-            await ctx.respond(embed=embed)
+            await member.kick(reason = "None")
+            embed=discord.Embed(title="Trinix Mod System", description=f"{member.mention} has been kicked from this server", color=0x7289da)
+            embed.add_field(name="Reason", value=f"{reason}")
+            await ctx.send(embed=embed)
         else:
             await ctx.channel.purge(limit=1)
             await member.kick(reason=reason)
-            embed=discord.Embed(title="Trinix Mod System", description=f"{member.mention} has been kicked from this server", color=0x7289da)
-            await ctx.respond(embed=embed)
+            embed=discord.Embed(title="Trinix Mod System", description=f"{member.mention} has been kicked from this server. Reason: {reason}", color=0x7289da)
+            embed.add_field(name="Reason", value=f"{reason}")
+            await ctx.send(embed=embed)
+
+    @commands.command()
+    @commands.has_permissions(ban_members = True)
+    async def ban(self, ctx, member : discord.Member, reason = None):
+        if reason == None:
+            await ctx.channel.purge(limit=1)
+            await member.ban(reason = "None")
+            embed=discord.Embed(title="Trinix Mod System", description=f"{member.mention} has been Banned from this server", color=0x7289da)
+            embed.add_field(name="Reason", value=f"{reason}")
+            await ctx.send(embed=embed)
+        else:
+            await ctx.channel.purge(limit=1)
+            await member.ban(reason=reason)
+            embed=discord.Embed(title="Trinix Mod System", description=f"{member.mention} has been Banned from this server", color=0x7289da)
+            await ctx.send(embed=embed)
 
     @commands.command()#Unban by Panda <3
     @commands.has_permissions(administrator = True)
@@ -59,14 +61,14 @@ class mod(commands.Cog):
             if u.id == id:
                 await ctx.guild.unban(u)
                 embed=discord.Embed(title="Trinix Mod System", description=f"{u} has been unbanned", color=0x7289da)
-                await ctx.respond(embed=embed)
+                await ctx.send(embed=embed)
 
     @commands.command()
     @commands.has_permissions(administrator=True)
     async def announce(self, ctx, message):
         await ctx.channel.purge(limit=1)
         embed=discord.Embed(title=f"Announcements", description=message, color=0x7289da)
-        await ctx.respond(embed=embed)
+        await ctx.send(embed=embed)
 
 # --------------------------------------------------------------------------------------------------------------------------------
 
