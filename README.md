@@ -33,7 +33,7 @@ apt install python3.9
 
 apt install python3-pip
 
-pip3 install discord.py
+python3 -m pip install -U py-cord
 
 pip3 install cogs
 
