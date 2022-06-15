@@ -3,6 +3,8 @@
 import discord, json
 from discord.ext import commands, tasks
 
+# --------------------------------------------------------------------------------------------------------------------------------
+
 class help(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
