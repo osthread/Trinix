@@ -49,6 +49,7 @@ class mod(commands.Cog):
             await ctx.channel.purge(limit=1)
             await member.ban(reason=reason)
             embed=discord.Embed(title="Trinix Mod System", description=f"{member.mention} has been Banned from this server", color=0x7289da)
+            embed.add_field(name="Reason", value=f"{reason}")
             await ctx.send(embed=embed)
 
     @commands.command()#Unban by Panda <3
