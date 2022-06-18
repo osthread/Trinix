@@ -19,10 +19,10 @@ class help(commands.Cog):
             embed.title = "[Trinix Help Dashboard]"
             if ctx.message.author.guild_permissions.administrator:
                 embed.add_field(name=":shield: **Admin Commands**", value="Command: `.admin`")
-            embed.add_field(name=":loud_sound: **Music Commands**", value="Command: `.h music`")
-            embed.add_field(name=":cyclone: **Misc Commands**", value="Command: `.h misc`")
-            embed.add_field(name=":sparkles: **Neko Commands**", value="Command: `.h neko`")
-            embed.add_field(name=":tada: **Fun Commands**", value="Command: `.h fun`")
+            embed.add_field(name=":loud_sound: **Music Commands**", value="Command: `.help music`")
+            embed.add_field(name=":cyclone: **Misc Commands**", value="Command: `.help misc`")
+            embed.add_field(name=":sparkles: **Neko Commands**", value="Command: `.help neko`")
+            embed.add_field(name=":tada: **Fun Commands**", value="Command: `.help fun`")
             embed.set_footer(text="Trinix", icon_url = ctx.guild.icon)
             await ctx.send(embed=embed)
 
