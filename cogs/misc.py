@@ -21,7 +21,13 @@ class misc(commands.Cog):
     async def oauth(self, ctx):
         responses = 'Heres my invite link https://discord.com/oauth2/authorize?client_id=985075081535451186&permissions=8&scope=bot%20applications.commands <3'
         await ctx.send(responses)
-    
+
+    @commands.command()
+    async def github(self, ctx):
+        embed=discord.Embed(title="Trinix's Github", description=f"", color=0x7289da)
+        embed.add_field(name="GitHub", value=f"Here is my [Github](https://github.com/UnknownToska/Trinix/)")
+        await ctx.send(embed=embed)
+
     @commands.command(aliases=['pwg'])
     async def passgen(self, ctx):
         API = "https://www.passwordrandom.com/query?command=password"
