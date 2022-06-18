@@ -6,7 +6,7 @@
 
 from discord.ext import commands
 
-import discord, re, json, os
+import discord, re, json, os, traceback
 
 # ---------------------------------------------------------------- Config ----------------------------------------------------------------
 
@@ -34,12 +34,16 @@ def main():
         print('|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||')
 
     #Cogs
-    for f in os.listdir("cogs"):
-        if re.match(r".*\.py.swp", f):
-            pass
-        elif re.match(r".*\.py", f):
-            Trinix.load_extension("cogs." + f.replace(".py", ""))
-
+    FileNameLst = os.listdir("cogs")
+    for extension in FileNameLst:
+        try:
+            if "_" in extension:
+                pass
+            else:
+                Trinix.load_extension(f'cogs.{extension[:-3]}')
+        except Exception as e:
+            print(f'Failed to load extension {extension[:-3]}.', file=sys.stderr)
+            traceback.print_exc()
     #Token
     Trinix.run(configData["Token"])#you put your bot token inside of config.json
 
