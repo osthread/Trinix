@@ -17,7 +17,8 @@ class help(commands.Cog):
         if arg == "cmd":
             embed = discord.Embed(color=0x7289da)
             embed.title = "[Trinix Help Dashboard]"
-            embed.add_field(name=":shield: **Admin Commands**", value="Command: `.admin`")
+            if ctx.message.author.guild_permissions.administrator:
+                embed.add_field(name=":shield: **Admin Commands**", value="Command: `.admin`")
             embed.add_field(name=":loud_sound: **Music Commands**", value="Command: `.h music`")
             embed.add_field(name=":cyclone: **Misc Commands**", value="Command: `.h misc`")
             embed.add_field(name=":sparkles: **Neko Commands**", value="Command: `.h neko`")
