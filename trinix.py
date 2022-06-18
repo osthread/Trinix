@@ -23,7 +23,7 @@ def main():
 
     @Trinix.event
     async def on_ready():#This shows when the bot is online and working
-        await Trinix.change_presence(activity=discord.Activity(type = discord.ActivityType.listening, name = "Maxie | .h cmd"))#activity status
+        await Trinix.change_presence(activity=discord.Activity(type = discord.ActivityType.listening, name = "Maxie | .help cmd"))#activity status
         print('|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||')
         print('████████ ██████  ██ ███    ██ ██ ██   ██      ██    ███████')
         print('   ██    ██   ██ ██ ████   ██ ██  ██ ██      ███    ██     ')
