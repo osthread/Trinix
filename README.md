@@ -19,7 +19,7 @@ apt upgrade (optional)
 apt autoremove (optional)
 
 _________________________
-Installation
+Installing Packages 
 
 apt install npm
 
