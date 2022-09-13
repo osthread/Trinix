@@ -7,16 +7,15 @@
 
 ### Installation
 - OS Debian 11
-- Python Version 3.9
+- Python Version 3.9+
 Debian Based Systems
+
 _________________________
 Updating Your System
 
 apt update
 
-apt upgrade (optional)
-
-apt autoremove (optional)
+apt upgrade
 
 _________________________
 Installing Packages 
