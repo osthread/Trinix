@@ -3,7 +3,7 @@
 * Language: Python
 
 ### Contact Me
-* Discord: Maxie#0008
+* Discord: https://discord.gg/eDpPP5BXyf/ (Make ticket if needed)
 
 ### Installation
 - OS Debian 11
@@ -29,13 +29,11 @@ apt install git
 
 git clone https://github.com/UnknownToska/Trinix/
 
-apt install python3.9
+apt install python3
 
 apt install python3-pip
 
 python3 -m pip install -U py-cord
-
-pip3 install cogs
 
 pip3 install requests
 _________________________
