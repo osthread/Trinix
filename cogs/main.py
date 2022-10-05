@@ -3,16 +3,13 @@
 from discord.ext import commands, tasks
 from random import choice, choices
 
-
-import discord, random, requests, http
+import discord, random, requests
 
 # --------------------------------------------------------------------------------------------------------------------------------
 
 class main(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-
-# ---------------------------------------------------------------- Main Commands ----------------------------------------------------------------
 
     @commands.command()
     async def hello(self, ctx):
@@ -46,74 +43,54 @@ class main(commands.Cog):
     async def coinflip(self, ctx):
         coinside = ['Heads', 'Tails']
         random = choice(coinside)
-        coin = f"**{ctx.author.mention}** flipped a coin and got **{random}**!"
-        embed=discord.Embed(title="Results", color=0x7289da)
-        embed.add_field(name="Result:", value=coin, inline=False)
+        embed=discord.Embed(title=f"**{ctx.author.mention}** flipped a coin and got **{random}**!", color=0x7289da)
         await ctx.send(embed=embed)
 
     @commands.command()
     async def rate(self, ctx, *, member:discord.Member = None):
         rate = random.uniform(0, 10)
-        rateSelfResponse = f"I'd rate {ctx.author.mention} a **{round(rate)} / 10**"
         if (member == ctx.author or member == None ):
-            embed=discord.Embed(title="Trinix Rate", description="", color=0x7289da)
-            embed.add_field(name="Results", value=rateSelfResponse, inline=False)
-            await ctx.send(embed=embed)
+            embed=discord.Embed(title="Trinix Rate", description=f"I'd rate {ctx.author.mention} a **{round(rate)} / 10**", color=0x7289da)
         else:
-            ratea = f"I'd rate {member.mention} a **{round(rate)} / 10**"
-            embed=discord.Embed(title="Trinix Rate", description="", color=0x7289da)
-            embed.add_field(name="Results", value=ratea, inline=False)
-            await ctx.send(embed=embed)
+            embed=discord.Embed(title="Trinix Rate", description=f"I'd rate {member.mention} a **{round(rate)} / 10**", color=0x7289da)
+        await ctx.send(embed=embed)
 
     @commands.command()
     async def simprate(self, ctx, *, member:discord.Member = None):
         rate = random.uniform(0, 100)
-        simprateSelfResponse = f" {ctx.author.mention} is **{round(rate)} %** a simp"
         if (member == ctx.author or member == None ):
-            embed=discord.Embed(title="Trinix Simp Rate", description="", color=0x7289da)
-            embed.add_field(name="Results", value=simprateSelfResponse, inline=False)
-            await ctx.send(embed=embed)
+            embed=discord.Embed(title="Trinix Simp Rate", description=f" {ctx.author.mention} is **{round(rate)} %** a simp", color=0x7289da)
         else:
-            ratea = f"{member.mention} is **{round(rate)} %** a simp"
-            embed=discord.Embed(title="Trinix Rate", description="", color=0x7289da)
-            embed.add_field(name="Results", value=ratea, inline=False)
-            await ctx.send(embed=embed)
+            embed=discord.Embed(title="Trinix Simp Rate", description=f"{member.mention} is **{round(rate)} %** a simp", color=0x7289da)
+        await ctx.send(embed=embed)
 
     @commands.command()
     async def fun(self, ctx, arg):
         r = requests.get(url = f"https://api.truthordarebot.xyz/v1/{arg}")
         if arg == "truth":
-            try:
-                    embed = discord.Embed(title="Trinix Truth", description=(r.json()["question"]), color=0x7289da)
-                    await ctx.send(embed=embed)
-            except:
-                print("[Fun ERROR!]")
+            embed = discord.Embed(title="Trinix Truth", description=(r.json()["question"]), color=0x7289da)
+            await ctx.send(embed=embed)
+
         elif arg == "dare":
-                    try:
-                            embed = discord.Embed(title="Trinix Dare", description=(r.json()["question"]), color=0x7289da)
-                            await ctx.send(embed=embed)
-                    except:
-                        print("[Fun ERROR!]")
+            embed = discord.Embed(title="Trinix Dare", description=(r.json()["question"]), color=0x7289da)
+            await ctx.send(embed=embed)
+
         elif arg == "wyr":
-                    try:
-                            embed = discord.Embed(title="Trinix Would You Rather", description=(r.json()["question"]), color=0x7289da)
-                            await ctx.send(embed=embed)
-                    except:
-                        print("[Fun ERROR!]")
+            embed = discord.Embed(title="Trinix Would You Rather", description=(r.json()["question"]), color=0x7289da)
+            await ctx.send(embed=embed)
+
         elif arg == "nhie":
-                    try:
-                            embed = discord.Embed(title="Trinix Never Have I Ever", description=(r.json()["question"]), color=0x7289da)
-                            await ctx.send(embed=embed)
-                    except:
-                        print("[Fun ERROR!]")
+            embed = discord.Embed(title="Trinix Never Have I Ever", description=(r.json()["question"]), color=0x7289da)
+            await ctx.send(embed=embed)
+
         elif arg == "paranoia":
-                    try:
-                            embed = discord.Embed(title="Trinix paranoia", description=(r.json()["question"]), color=0x7289da)
-                            await ctx.send(embed=embed)
-                    except:
-                        print("[Fun ERROR!]")
-
-# --------------------------------------------------------------------------------------------------------------------------------
-
+            embed = discord.Embed(title="Trinix paranoia", description=(r.json()["question"]), color=0x7289da)
+            await ctx.send(embed=embed)
+        else: 
+            embed=discord.Embed(title="[Trinix Error System]", description="[ERROR]This isn't a command.", color=0xff0000)
+            await ctx.send(embed=embed)
+            
 def setup(bot): #Must have a setup function
     bot.add_cog(main(bot)) # Add the class to the cog.
+
+# --------------------------------------------------------------------------------------------------------------------------------
