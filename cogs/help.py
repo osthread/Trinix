@@ -9,10 +9,8 @@ class help(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-# ---------------------------------------------------------------- Help Commands ----------------------------------------------------------------
-
     @commands.command()
-    async def h(self, ctx, arg, cmd=None):
+    async def help(self, ctx, arg, cmd=None):
 
         if arg == "cmd":
             embed = discord.Embed(color=0x7289da)
@@ -81,6 +79,10 @@ class help(commands.Cog):
             embed.add_field(name="**Self Smug**", value="Command: `.n smug`")
             embed.set_footer(text="Trinix", icon_url = ctx.guild.icon)
             await ctx.send(embed=embed)
+        else:
+            embed=discord.Embed(title="[Trinix Error System]", description="[ERROR]This isn't a command.", color=0xff0000)
+            await ctx.send(embed=embed)
+
 
     @commands.command()
     @commands.has_permissions(administrator=True)
@@ -96,7 +98,7 @@ class help(commands.Cog):
         embed.set_footer(text="Trinix", icon_url = ctx.guild.icon)
         await ctx.send(embed=embed)
 
-# --------------------------------------------------------------------------------------------------------------------------------
-
 def setup(bot): #Must have a setup function
     bot.add_cog(help(bot)) # Add the class to the cog.
+
+# --------------------------------------------------------------------------------------------------------------------------------
