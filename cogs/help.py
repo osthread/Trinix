@@ -93,7 +93,9 @@ class help(commands.Cog):
                 embed.set_footer(text="Trinix", icon_url = ctx.guild.icon)
                 await ctx.send(embed=embed)
             else:
-                await ctx.send('You arent allowed to use this command.')
+                embed=discord.Embed(title="Trinix Error System", description="[EEROR]You do not have the required permissions.", color=0xff0000)
+                await ctx.send(embed=embed)
+                
         else:
             embed=discord.Embed(title="[Trinix Error System]", description="[ERROR]This isn't a command.", color=0xff0000)
             await ctx.send(embed=embed)
