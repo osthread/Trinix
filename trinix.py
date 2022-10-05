@@ -44,7 +44,7 @@ def main():
         print('            Trinix is now up and ready to use!             ')
         print('|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||')
 
-    FileNameLst = os.listdir("Commands")
+    FileNameLst = os.listdir("cogs")
     for extension in FileNameLst:
         try:
             if "_" in extension:
