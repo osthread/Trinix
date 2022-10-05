@@ -12,7 +12,7 @@
 - This works on windwos but its a different installation.
 
 _________________________
-###Updating Your System
+## Updating Your System
 
 ```js
 apt update
@@ -22,7 +22,7 @@ apt update
 apt upgrade -y
 ```
 _________________________
-###Installing Packages 
+## Installing Packages 
 
 ```js
 apt install npm
@@ -56,7 +56,7 @@ python3 -m pip install -U py-cord
 pip3 install requests
 ```
 _________________________
-###Running / Useage
+## Running / Useage
 
 ```js
 pm2 start Trinix.py --interpreter python3
