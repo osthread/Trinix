@@ -20,7 +20,6 @@ import discord, re, json, os, traceback, sys
 
 # ---------------------------------------------------------------- Config ----------------------------------------------------------------
 
-
 with open("config.json", "r") as confjson:
 	configData = json.load(confjson)
 
