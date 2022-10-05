@@ -1,9 +1,8 @@
 # ---------------------------------------------------------------- Required Imports ----------------------------------------------------------------
 
 from discord.ext import commands, tasks
-from random import choice
 
-import discord, random, requests
+import discord, requests
 
 # --------------------------------------------------------------------------------------------------------------------------------
 
@@ -11,121 +10,97 @@ class nekos(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-# ---------------------------------------------------------------- Neko Commands ----------------------------------------------------------------
-
     @commands.command()
-    async def n(self, ctx, arg, member:discord.Member = None):
-
+    async def neko(self, ctx, arg, member:discord.Member = None):
         r = requests.get(f"https://neko-love.xyz/api/v1/{arg}")
-
         if arg == "hug":
-            try:
-                if (member == ctx.author or member == None):
-                    embed = discord.Embed(color=0x7289da)
-                    embed.set_author(name=f"{ctx.author.name} Hugged Themself.")
-                    embed.set_image(url=(r.json()["url"]))
-                    await ctx.send(embed=embed)
-                else:
-                    embed = discord.Embed(color=0x7289da)
-                    embed.set_author(name=f"{ctx.author.name} Hugged {member.name}.")
-                    embed.set_image(url=(r.json()["url"]))
-                    await ctx.send(embed=embed)
-            except:
-                print("[NEKO ERROR!]")
+            embed = discord.Embed(color=0x7289da)
+            if (member == ctx.author or member == None):
+                embed.set_author(name=f"{ctx.author.name} Hugged Themself.")
+            else:
+                embed.set_author(name=f"{ctx.author.name} Hugged {member.name}.")
+            embed.set_image(url=(r.json()["url"]))
+            await ctx.send(embed=embed)
 
         elif arg == "pat":
-            try:
-                if (member == ctx.author or member == None):
-                    embed = discord.Embed(title=f"{ctx.author.name} Patted Themself.", color=0x7289da)
-                    embed.set_image(url=(r.json()["url"]))
-                    await ctx.send(embed=embed)
-                else:
-                    embed = discord.Embed(title=f"{ctx.author.name} Patted {member.name}.", color=0x7289da)
-                    embed.set_image(url=(r.json()["url"]))
-                    await ctx.send(embed=embed)
-            except:
-                print("[NEKO ERROR!]")
+            embed = discord.Embed(color=0x7289da)
+            if (member == ctx.author or member == None):
+                embed.set_author(name=f"{ctx.author.name} Patted Themself.")
+            else:
+                embed.set_author(name=f"{ctx.author.name} Patted {member.name}.")
+            embed.set_image(url=(r.json()["url"]))
+            await ctx.send(embed=embed)
 
         elif arg == "kiss":
-            try:
-                if (member == ctx.author or member == None):
-                    embed = discord.Embed(title=f"{ctx.author.name} Kissed Themself", color=0x7289da)
-                    embed.set_image(url=(r.json()["url"]))
-                    await ctx.send(embed=embed)
-                else:
-                    embed = discord.Embed(title=f"Kissed {member.name}", color=0x7289da)
-                    embed.set_image(url=(r.json()["url"]))
-                    await ctx.send(embed=embed)
-            except:
-                print("[NEKO ERROR!]")
+            embed = discord.Embed(color=0x7289da)
+            if (member == ctx.author or member == None):
+                embed.set_author(name=f"{ctx.author.name} Kissed Themself.")
+            else:
+                embed.set_author(name=f"{ctx.author.name} Has Kissed {member.name}.")
+            embed.set_image(url=(r.json()["url"]))
+            await ctx.send(embed=embed)
 
         elif arg == "slap":
-            try:
-                if (member == ctx.author or member == None):
-                    embed = discord.Embed(title=f"{ctx.author.name} Slapped Themself.", color=0x7289da)
-                    embed.set_image(url=(r.json()["url"]))
-                    await ctx.send(embed=embed)
-                else:
-                    embed = discord.Embed(title=f"{ctx.author.name} Slapped {member.name}.", color=0x7289da)
-                    embed.set_image(url=(r.json()["url"]))
-                    await ctx.send(embed=embed)
-            except:
-                print("[NEKO ERROR!]")
+            embed = discord.Embed(color=0x7289da)
+            if (member == ctx.author or member == None):
+                embed.set_author(name=f"{ctx.author.name} Slapped Themself.")
+            else:
+                embed.set_author(name=f"{ctx.author.name} Slapped {member.name}. OUCH")
+            embed.set_image(url=(r.json()["url"]))
+            await ctx.send(embed=embed)
 
         elif arg == "punch":
-            try:
-                if (member == ctx.author or member == None):
-                    embed = discord.Embed(title=f"{ctx.author.name} Punched Themself.", color=0x7289da)
-                    embed.set_image(url=(r.json()["url"]))
-                    await ctx.send(embed=embed)
-                else:
-                    embed = discord.Embed(title=f"{ctx.author.name} Punched {member.name}.", color=0x7289da)
-                    embed.set_image(url=(r.json()["url"]))
-                    await ctx.send(embed=embed)
-            except:
-                print("[NEKO ERROR!]")
+            embed = discord.Embed(color=0x7289da)
+            if (member == ctx.author or member == None):
+                embed.set_author(name=f"{ctx.author.name} Punched Themself.")
+            else:
+                embed.set_author(name=f"{ctx.author.name} Punched {member.name}.")
+            embed.set_image(url=(r.json()["url"]))
+            await ctx.send(embed=embed)
 
         elif arg == "smug":
-            try:
-                embed = discord.Embed(title=f"{ctx.author.name} Smugged", color=0x7289da)
-                embed.set_image(url=(r.json()["url"]))
-                await ctx.send(embed=embed)
-            except:
-                print("[NEKO ERROR!]")
+            embed = discord.Embed(color=0x7289da)
+            if (member == ctx.author or member == None):
+                embed.set_author(name=f"{ctx.author.name} Smugged..")
+            else:
+                embed.set_author(name=f"{ctx.author.name} Has Smugged at {member.name}.")
+            embed.set_image(url=(r.json()["url"]))
+            await ctx.send(embed=embed)
 
         elif arg == "waifu":
-            try:
-                embed = discord.Embed(title=f"{ctx.author.name} Generated A Waifu!", color=0x7289da)
-                embed.set_image(url=(r.json()["url"]))
-                await ctx.send(embed=embed)
-            except:
-                print("[NEKO ERROR!]")
+            embed = discord.Embed(color=0x7289da)
+            if (member == ctx.author or member == None):
+                embed.set_author(name=f"{ctx.author.name} Has Generated A Waifu")
+            else:
+                embed.set_author(name=f"{ctx.author.name} Has Generated A Waifu For {member.name}.")
+            embed.set_image(url=(r.json()["url"]))
+            await ctx.send(embed=embed)
 
         elif arg == "kitsune":
-            try:
-                embed = discord.Embed(title=f"{ctx.author.name} Generated Kitsune!", color=0x7289da)
-                embed.set_image(url=(r.json()["url"]))
-                await ctx.send(embed=embed)
-            except:
-                print("[NEKO ERROR!]")
+            embed = discord.Embed(color=0x7289da)
+            if (member == ctx.author or member == None):
+                embed.set_author(name=f"{ctx.author.name} Has Generated A Kitsune")
+            else:
+                embed.set_author(name=f"{ctx.author.name} Has Generated A Kitsune For {member.name}.")
+            embed.set_image(url=(r.json()["url"]))
+            await ctx.send(embed=embed)
 
         elif arg == "cry":
-            try:
-                embed = discord.Embed(title=f"{ctx.author.name} Is Crying...", color=0x7289da)
-                embed.set_image(url=(r.json()["url"]))
-                await ctx.send(embed=embed)
-            except:
-                print("[NEKO ERROR!]")
+            embed = discord.Embed(color=0x7289da)
+            embed.set_author(name=f"{ctx.author.name} Is crying </3 whas wrong?....")
+            embed.set_image(url=(r.json()["url"]))
+            await ctx.send(embed=embed)
                 
         elif arg == "nekolewd":
-            try:
-                embed = discord.Embed(title=f"{ctx.author.name} Generated Nekolewd!", color=0x7289da)
-                embed.set_image(url=(r.json()["url"]))
-                await ctx.send(embed=embed)
-            except:
-                print("[NEKO ERROR!]")
-
-# --------------------------------------------------------------------------------------------------------------------------------
+            embed = discord.Embed(color=0x7289da)
+            embed.set_author(name=f"{ctx.author.name} Has Generated Nekolewd UwU")
+            embed.set_image(url=(r.json()["url"]))
+            await ctx.send(embed=embed)
+        else: 
+            embed=discord.Embed(title="[Trinix Error System]", description="[ERROR]This isn't a command.", color=0xff0000)
+            await ctx.send(embed=embed)
 
 def setup(bot): #Must have a setup function
     bot.add_cog(nekos(bot)) # Add the class to the cog.
+
+# --------------------------------------------------------------------------------------------------------------------------------
