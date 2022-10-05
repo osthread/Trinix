@@ -8,7 +8,8 @@
 ### Installation
 - OS Debian 11
 - Python Version 3.9+
-Debian Based Systems
+- Debian Based Systems
+- This works on windwos but its a different installation.
 
 _________________________
 Updating Your System
