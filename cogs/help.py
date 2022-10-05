@@ -79,6 +79,7 @@ class help(commands.Cog):
             embed.add_field(name="**Self Smug**", value="Command: `.n smug`")
             embed.set_footer(text="Trinix", icon_url = ctx.guild.icon)
             await ctx.send(embed=embed)
+            
         elif arg == "admin":
             if ctx.message.author.guild_permissions.administrator:
                 embed = discord.Embed(color=0x7289da)
