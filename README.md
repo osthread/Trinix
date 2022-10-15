@@ -22,7 +22,7 @@ apt update
 apt upgrade -y
 ```
 _________________________
-## Installing Packages 
+## Installing Dependencies
 
 ```js
 apt install npm
