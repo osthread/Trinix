@@ -3,7 +3,7 @@
 * Language: Python
 
 ### Contact Me
-* Discord: https://discord.gg/F4HS3cTZe5/ (Make ticket if needed)
+* Discord: https://discord.gg/trinix/ (Make ticket if needed)
 
 ### Installation
 - OS Debian 11
