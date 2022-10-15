@@ -49,7 +49,7 @@ def main():
             if "_" in extension:
                 pass
             else:
-                Trinix.load_extension(f'Commands.{extension[:-3]}')
+                Trinix.load_extension(f'cogs.{extension[:-3]}')
         except Exception as e:
             print(f'Failed to load extension {extension[:-3]}.', file=sys.stderr)
             traceback.print_exc()
