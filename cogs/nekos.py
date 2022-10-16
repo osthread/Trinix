@@ -6,7 +6,7 @@ import discord, requests
 
 # --------------------------------------------------------------------------------------------------------------------------------
 
-class nekos(commands.Cog):
+class apis(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -100,7 +100,32 @@ class nekos(commands.Cog):
             embed=discord.Embed(title="[Trinix Error System]", description="[ERROR]This isn't a command.", color=0xff0000)
             await ctx.send(embed=embed)
 
-def setup(bot): #Must have a setup function
-    bot.add_cog(nekos(bot)) # Add the class to the cog.
+    @commands.command()
+    async def fun(self, ctx, arg):
+        r = requests.get(url = f"https://api.truthordarebot.xyz/v1/{arg}")
+        if arg == "truth":
+            embed = discord.Embed(title="Trinix Truth", description=(r.json()["question"]), color=0x7289da)
+            await ctx.send(embed=embed)
 
+        elif arg == "dare":
+            embed = discord.Embed(title="Trinix Dare", description=(r.json()["question"]), color=0x7289da)
+            await ctx.send(embed=embed)
+
+        elif arg == "wyr":
+            embed = discord.Embed(title="Trinix Would You Rather", description=(r.json()["question"]), color=0x7289da)
+            await ctx.send(embed=embed)
+
+        elif arg == "nhie":
+            embed = discord.Embed(title="Trinix Never Have I Ever", description=(r.json()["question"]), color=0x7289da)
+            await ctx.send(embed=embed)
+
+        elif arg == "paranoia":
+            embed = discord.Embed(title="Trinix paranoia", description=(r.json()["question"]), color=0x7289da)
+            await ctx.send(embed=embed)
+        else: 
+            embed=discord.Embed(title="[Trinix Error System]", description="[ERROR]This isn't a command.", color=0xff0000)
+            await ctx.send(embed=embed)
+
+def setup(bot): #Must have a setup function
+    bot.add_cog(apis(bot)) # Add the class to the cog.
 # --------------------------------------------------------------------------------------------------------------------------------
