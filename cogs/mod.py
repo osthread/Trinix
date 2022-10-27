@@ -12,11 +12,11 @@ class mod(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(aliases= ['purge','delete','clear'])
+    @commands.command(aliases= ['purge','delete'])
     @commands.has_permissions(administrator=True)
     async def clean(self, ctx, limit: int):
         await ctx.channel.purge(limit=limit)
-        embed = discord.Embed(title="[Mod System] Chat Purge", description=f"{ctx.author.mention} Deleted {limit} messages.", color=0x7289da)
+        embed = discord.Embed(title="[Mod System] Chat Purge", description=f"{ctx.author.mention} Deleted {limit} messages.", color=0x00FF00)
         embed.set_footer(text=f"{ctx.message.guild.name}", icon_url = ctx.guild.icon)
         await ctx.send(embed=embed)
 
@@ -28,7 +28,7 @@ class mod(commands.Cog):
             await member.kick(reason = "None")
         else:
             await member.kick(reason=reason)
-        embed=discord.Embed(title="Trinix Mod System", description=f"{member.mention} has been kicked from this server by {ctx.author.mention}", color=0x7289da)
+        embed=discord.Embed(title="[Mod System] Kick Member", description=f"{member.mention} has been kicked from this server by {ctx.author.mention}", color=0x00FF00)
         embed.add_field(name="Reason", value=f"{reason}")
         await ctx.send(embed=embed)  
 
@@ -40,7 +40,7 @@ class mod(commands.Cog):
             await member.ban(reason = "None")
         else:
             await member.ban(reason = "None")
-        embed=discord.Embed(title="[Mod System] Ban Member", description=f"{member.mention} has been Banned from this server by {ctx.author.mention}", color=0x7289da)
+        embed=discord.Embed(title="[Mod System] Ban Member", description=f"{member.mention} has been Banned from this server by {ctx.author.mention}", color=0x00FF00)
         embed.add_field(name="Reason", value=f"{reason}")
         await ctx.send(embed=embed)
 
@@ -53,16 +53,22 @@ class mod(commands.Cog):
             u = i.user
             if u.id == id:
                 await ctx.guild.unban(u)
-                embed=discord.Embed(title="Trinix Mod System", description=f"{u} has been unbanned", color=0x7289da)
+                embed=discord.Embed(title="[Mod System] Unban Member", description=f"{u} has been unbanned", color=0x00FF00)
                 await ctx.send(embed=embed)
 
     @commands.command()
     @commands.has_permissions(administrator=True)
     async def announce(self, ctx, *, message):
         await ctx.channel.purge(limit=1)
-        embed=discord.Embed(title=f"{ctx.message.guild.name} Announcement!", description=message, color=0x7289da)
+        embed=discord.Embed(title=f"{ctx.message.guild.name} Announcement!", description=message, color=0x00FF00)
         embed.set_footer(text=f"{ctx.message.guild.name}", icon_url = ctx.guild.icon)
         await ctx.send(embed=embed)
+
+    @commands.command()
+    @commands.has_permissions(administrator=True)
+    async def say(self, ctx, *, message):
+        await ctx.channel.purge(limit=1)
+        await ctx.send(message)
 
 def setup(bot): #Must have a setup function
     bot.add_cog(mod(bot)) # Add the class to the cog.
