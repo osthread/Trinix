@@ -22,7 +22,7 @@ class misc(commands.Cog):
     @commands.command()
     async def github(self, ctx):
         embed=discord.Embed(title="Trinix's Github", description=f"", color=0x7289da)
-        embed.add_field(name="GitHub", value=f"Here is my [Github](https://github.com/UnknownToska/Trinix/)")
+        embed.add_field(name="GitHub", value=f"Here is my [Github](https://github.com/MaxiesMind/Trinix/)")
         await ctx.send(embed=embed)
 
     @commands.command(aliases=['pwg'])
