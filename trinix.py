@@ -13,7 +13,7 @@ class Trinix(commands.Bot):
         self.bot = self.get_bot()
 
     def get_token(self):
-        token = self.db_manager.execute_read_one_query("SELECT token FROM auth;")
+        token = self.db_manager.execute_read_one_query("SELECT token FROM auth")
         return token[0]
 
     def get_bot(self):
