@@ -50,7 +50,7 @@ Simple community bot
 
 ### Built With
 
-* Python 3.11 | [64](https://www.python.org/ftp/python/3.11.5/python-3.11.5-amd64.exe) / [32](https://www.python.org/ftp/python/3.11.5/python-3.11.5.exe)
+* Python 3.9
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
