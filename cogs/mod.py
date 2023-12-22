@@ -11,7 +11,7 @@ class mod(commands.Cog):
         self.bot = bot
         self.db_manager = DatabaseManager()
 
-    @commands.slash_command(guild_ids=[1091479330502213636, 1187754871336751135], description="Setup log channel")
+    @commands.slash_command(description="Setup log channel")
     @commands.has_permissions(administrator=True)
     async def setup_logger(self, ctx):
         guild = ctx.guild
@@ -31,7 +31,7 @@ class mod(commands.Cog):
  
             await ctx.respond('Log server has been setup.')
 
-    @commands.slash_command(guild_ids=[1091479330502213636, 1187754871336751135], description="Enable logger")
+    @commands.slash_command(description="Enable logger")
     @commands.has_permissions(administrator=True)
     async def enable(self, ctx, option: discord.Option(str, "Choose a option!", choices=["voice", "message", "join"])): 
         res = self.db_manager.execute_read_one_query("SELECT voice_logger,message_logger FROM config WHERE guild_id = ?", (ctx.guild.id,))
@@ -48,7 +48,7 @@ class mod(commands.Cog):
             if res[1] == "on":
                 return await ctx.respond("Message Logger has already been enabled.")
 
-            self.db_manager.execute_query("UPDATE config SET message_logger = 'on'")
+            self.db_manager.execute_query("UPDATE config SET message_logger = 'on' WHERE guild_id = ?", (ctx.guild.id,))
             embed = discord.Embed(title="[Mod System] Message Logger", description="Message logger has been enabled!", color=0x00FF00)
             embed.set_footer(text = ctx.guild.name, icon_url = self.bot.user.avatar)
             await ctx.respond(embed=embed)
@@ -57,7 +57,7 @@ class mod(commands.Cog):
             if res[1] == "on":
                 return await ctx.respond("Join Detection has already been enabled.")
 
-            self.db_manager.execute_query("UPDATE config SET join_detection = 'on'")
+            self.db_manager.execute_query("UPDATE config SET join_detection = 'on' WHERE guild_id = ?", (ctx.guild.id,))
             embed = discord.Embed(title="[Mod System] Join Detection", description="Join Detection has been enabled!", color=0x00FF00)
             embed.set_footer(text = ctx.guild.name, icon_url = self.bot.user.avatar)
             await ctx.respond(embed=embed)
@@ -70,7 +70,7 @@ class mod(commands.Cog):
             if res[0] == "off":
                 return await ctx.respond("Voice Monitor has already been disabled.")
 
-            self.db_manager.execute_query("UPDATE config SET voice_logger = 'off'")
+            self.db_manager.execute_query("UPDATE config SET voice_logger = 'off' WHERE guild_id = ?", (ctx.guild.id,))
             embed = discord.Embed(title="[Mod System] Voice logger", description="Voice logger has been disabled!", color=0x00FF00)
             embed.set_footer(text = ctx.guild.name, icon_url = self.bot.user.avatar)
             await ctx.respond(embed=embed)
@@ -79,7 +79,7 @@ class mod(commands.Cog):
             if res[1] == "off":
                 return await ctx.respond("Message Logger has already been disabled.")
 
-            self.db_manager.execute_query("UPDATE config SET message_logger = 'off'")
+            self.db_manager.execute_query("UPDATE config SET message_logger = 'off' WHERE guild_id = ?", (ctx.guild.id,))
             embed = discord.Embed(title="[Mod System] Message Logger", description="Message logger has been disabled!", color=0x00FF00)
             embed.set_footer(text = ctx.guild.name, icon_url = self.bot.user.avatar)
             await ctx.respond(embed=embed)
@@ -88,7 +88,7 @@ class mod(commands.Cog):
             if res[1] == "off":
                 return await ctx.respond("Join Detection has already been disabled.")
 
-            self.db_manager.execute_query("UPDATE config SET join_detection = 'off'")
+            self.db_manager.execute_query("UPDATE config SET join_detection = 'off' WHERE guild_id = ?", (ctx.guild.id,))
             embed = discord.Embed(title="[Mod System] Join Detection", description="Join Detection has been disabled!", color=0x00FF00)
             embed.set_footer(text = ctx.guild.name, icon_url = self.bot.user.avatar)
             await ctx.respond(embed=embed)
