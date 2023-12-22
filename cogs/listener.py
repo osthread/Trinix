@@ -5,7 +5,7 @@ from discord.ext import commands, tasks
 from Modules.error.logger import CustomLogger
 from Modules.database.db import DatabaseManager
 
-import discord, logging, aiohttp
+import discord, logging, aiohttp, timedelta
 
 class listener(commands.Cog):
     def __init__(self, bot):
@@ -25,9 +25,8 @@ class listener(commands.Cog):
             return await ctx.respond(f"You are missing the required roles to use this command.", ephemeral=True)
             
         elif isinstance(error, commands.MissingPermissions):
-            missing_perms = ", ".join(error.missing_perms)
-            return await ctx.respond(f"You are missing the required permissions: {missing_perms} to use this command.", ephemeral=True)
-
+            return await ctx.respond(f"You are missing the required permissions", ephemeral=True)
+            
         await ctx.respond("An error occurred: {}".format(str(error)), ephemeral=True)
             
     @commands.Cog.listener()
@@ -55,6 +54,9 @@ class listener(commands.Cog):
             if not member.avatar:
                 reasons.append('No profile picture')
 
+            if datetime.utcnow() - member.created_at < timedelta(days=7):
+                reasons.append('Newly created account')
+
             if reasons:
                 embed.description = f'Alert: {member.mention} might be suspicious for the following reasons: {", ".join(reasons)}.'
                 suspicious = True
@@ -63,6 +65,20 @@ class listener(commands.Cog):
                 async with aiohttp.ClientSession() as session:
                     webhook = discord.Webhook.from_url(member_join[1], session=session)
                     await webhook.send(embed=embed, username='Trinix')
+
+    @commands.Cog.listener()
+    async def on_message(self, message):
+        await self.bot.process_commands(message)
+
+        blacklisted_member = self.db_manager.execute_read_all_query("SELECT member FROM blacklist WHERE guild_id = ?", (message.guild.id,))
+
+        if message.author.id == self.bot.user.id:
+            return
+
+        if blacklisted_member is not None:
+            for b in blacklisted_member:
+                if message.author.id == int(b[0]):
+                    await message.delete()
 
     @commands.Cog.listener()
     async def on_message_delete(self, message):
@@ -169,4 +185,4 @@ class listener(commands.Cog):
             pass
         
 def setup(bot): 
-    bot.add_cog(listener(bot)) 
+    bot.add_cog(listener(bot))
