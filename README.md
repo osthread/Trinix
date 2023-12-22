@@ -108,7 +108,7 @@ Distributed under the GPL-3.0 License. See `LICENSE.txt` for more information.
 
 The library we are currently using.
 
-* Py-cord libray [discord-selfbot](https://github.com/Pycord-Development/pycord)_
+* Py-cord libray [Py-cord](https://github.com/Pycord-Development/pycord)_
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
