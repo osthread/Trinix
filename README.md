@@ -5,13 +5,13 @@
 <br />
 <div align="center">
   <a href="https://github.com/MaxieDev/Trinix/">
-    <img src="https://cdn.discordapp.com/attachments/1187754874948030606/1187761072673923152/5.png" alt="Logo" width="80" height="80">
+    <img src="https://cdn.discordapp.com/attachments/1187754874948030606/1187762737858756758/Untitled_design.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Lethal SelfBot</h3>
+  <h3 align="center">Trinix</h3>
 
   <p align="center">
-    Simple  open-source discord bot
+    A simple open-source discord bot
     <br />
     <a href="https://discord.gg/rySbUJS64t"><strong>Explore the Dscord »</strong></a>
     <br />
