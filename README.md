@@ -1,62 +1,73 @@
-### About Trinix
-* Trinix is a simple community bot.
-* Language: Python
+<a name="readme-top"></a>
 
-### Contact Me
-* Discord: https://discord.gg/trinix/ (Make ticket if needed)
 
-### Installation
-- OS Debian 11
-- Python Version 3.9+
-- Debian Based Systems
-- This works on windwos but its a different installation.
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/MaxieDev/Trinix/">
+    <img src="https://cdn.discordapp.com/attachments/1187754874948030606/1187761072673923152/5.png" alt="Logo" width="80" height="80">
+  </a>
 
-_________________________
-## Updating Your System
+  <h3 align="center">Lethal SelfBot</h3>
 
-```js
-apt update
-```
+  <p align="center">
+    Simple  open-source discord bot
+    <br />
+    <a href="https://discord.gg/rySbUJS64t"><strong>Explore the Dscord »</strong></a>
+    <br />
+    <br />
+  </p>
+</div>
 
-```js
-apt upgrade -y
-```
-_________________________
-## Installing Dependencies
 
-```js
-apt install npm
-```
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#contact">Usage</a></li>
+        <li><a href="#usage">Contact</a></li>
+        <li><a href="#built-with">Built With</a></li>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#acknowledgments">Acknowledgments</a></li>
+        <li><a href="#getting-started">Getting Started</a></li>
+      </ul>
+    </li>
+  </ol>
+</details>
 
-```js
-npm install pm2 -g
-```
 
-```js
-apt install git
-```
 
-```js
-git clone https://github.com/UnknownToska/Trinix/
-```
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-```js
-apt install python3
-```
+Simple community bot
 
-```js
-apt install python3-pip
-```
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-```js
-python3 -m pip install -U py-cord
-```
 
-```js
-pip3 install requests
-```
-_________________________
-## Running / Useage
+### Built With
+
+* Python 3.11 | [64](https://www.python.org/ftp/python/3.11.5/python-3.11.5-amd64.exe) / [32](https://www.python.org/ftp/python/3.11.5/python-3.11.5.exe)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+### Prerequisites
+You'll need to run this in order to use the bot.
+
+* Installing Packages
+  ```sh
+  pip install -r requirements.txt
+  ```
+
+<!-- USAGE EXAMPLES -->
+## Usage
+
 
 ```js
 pm2 start Trinix.py --interpreter python3
@@ -74,3 +85,30 @@ pm2 restart <ID>
 pm2 stop <ID> 
 ```
 
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+<!-- LICENSE -->
+## License
+
+Distributed under the GPL-3.0 License. See `LICENSE.txt` for more information.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+<!-- CONTACT -->
+## Contact
+
+* _For support, please refer to the [discord](https://discord.gg/CMDnygFbXR)_
+
+
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
+
+The library we are currently using.
+
+* Py-cord libray [discord-selfbot](https://github.com/Pycord-Development/pycord)_
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
