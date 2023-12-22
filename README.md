@@ -27,8 +27,8 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
-        <li><a href="#contact">Usage</a></li>
-        <li><a href="#usage">Contact</a></li>
+        <li><a href="#usage">Usage</a></li>
+        <li><a href="#contact">Contact</a></li>
         <li><a href="#built-with">Built With</a></li>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#acknowledgments">Acknowledgments</a></li>
