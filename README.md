@@ -113,9 +113,7 @@ Distributed under the GPL-3.0 License. See `LICENSE.txt` for more information.
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-The library we are currently using.
-
-* [Py-cord](https://github.com/Pycord-Development/pycord)
+* [Py-cord](https://github.com/Pycord-Development/pycord): The library used for this project.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
