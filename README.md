@@ -43,7 +43,14 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Simple community bot
+Trinix is built using Python 3.9 and leverages the Py-cord library, a modern, easy-to-use, feature-rich, and async-ready API wrapper for Discord. It offers:
+
+- **Database Management:** Utilizes SQLite for efficient data handling.
+- **Custom Logging:** Sophisticated system for monitoring and debugging.
+- **Interactive Commands:** Engages with external APIs for fun and interactive content.
+- **Event Monitoring:** Provides detailed logs and actions for server moderation.
+- **Modular Design:** Highly customizable and extendable for specific community needs.
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
