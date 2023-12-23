@@ -65,7 +65,7 @@ Trinix is built using Python 3.9 and leverages the Py-cord library, a modern, ea
 ## Getting Started
 
 ### Prerequisites
-You'll need to run this in order to use the bot.
+Ensure you have Python 3.9 installed and then set up the bot using the following commands:
 
 * Installing Packages
   ```sh
