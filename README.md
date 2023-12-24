@@ -72,6 +72,14 @@ Ensure you have Python 3.9 installed and then set up the bot using the following
   pip install -r requirements.txt
   ```
 
+  ```sh
+  apt install nodejs npm
+  ```
+
+  ```sh
+  npm install pm2@latest -g
+  ```
+
 <!-- USAGE EXAMPLES -->
 ## Usage
 
