@@ -10,7 +10,7 @@ class CustomLogger:
     Console logs are colorized while file logs are stored in a specified file.
     """
 
-    def __init__(self, logger_name, log_level=logging.INFO, log_file_path="/root/Trinix/Modules/logs/error.log"):
+    def __init__(self, logger_name, log_level=logging.INFO, log_file_path="Set-Path-Here"):
         """
         Initialize the custom logger.
         :param logger_name: Name of the logger
