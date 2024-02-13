@@ -122,6 +122,7 @@ Distributed under the GPL-3.0 License. See `LICENSE.txt` for more information.
 ## Acknowledgments
 
 * The library used for this project: [Py-cord](https://github.com/Pycord-Development/pycord)
+* Logo By gh0st_artz
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
