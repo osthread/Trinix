@@ -121,8 +121,9 @@ Distributed under the GPL-3.0 License. See `LICENSE.txt` for more information.
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* The library used for this project: [Py-cord](https://github.com/Pycord-Development/pycord)
 * Logo By gh0st_artz
+* The library used for this project: [Py-cord](https://github.com/Pycord-Development/pycord)
+* Streaming-Service: [Free-Streaming](https://github.com/MaxieDev/Free-Streaming)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
