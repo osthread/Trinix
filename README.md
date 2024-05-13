@@ -1,5 +1,5 @@
-<a name="readme-top"></a>
 
+<a name="readme-top"></a>
 
 <!-- PROJECT LOGO -->
 <br />
@@ -15,10 +15,8 @@
     <br />
     <a href="https://discord.gg/rySbUJS64t"><strong>Explore the Discord »</strong></a>
     <br />
-    <br />
   </p>
 </div>
-
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -38,8 +36,6 @@
   </ol>
 </details>
 
-
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
@@ -51,9 +47,7 @@ Trinix is built using Python 3.9 and leverages the Py-cord library, a modern, ea
 - **Event Monitoring:** Provides detailed logs and actions for server moderation.
 - **Modular Design:** Highly customizable and extendable for specific community needs.
 
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 ### Built With
 
@@ -83,26 +77,23 @@ Ensure you have Python 3.9 installed and then set up the bot using the following
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-
-```js
-pm2 start Trinix.py --interpreter python3
+```sh
+pm2 start trinix.py --interpreter python3
 ```
 
-```js
+```sh
 pm2 list
 ```
 
-```js
+```sh
 pm2 restart <ID>
 ```
 
-```js
-pm2 stop <ID> 
+```sh
+pm2 stop <ID>
 ```
 
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <!-- LICENSE -->
 ## License
@@ -111,19 +102,18 @@ Distributed under the GPL-3.0 License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
 <!-- CONTACT -->
 ## Contact
 
-* _For support, please refer to the [discord](https://discord.gg/CMDnygFbXR)_
+For support, please refer to the [Discord](https://discord.gg/CMDnygFbXR).
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* Logo By gh0st_artz
+* Logo by gh0st_artz
 * The library used for this project: [Py-cord](https://github.com/Pycord-Development/pycord)
 * Streaming-Service: [Free-Streaming](https://github.com/MaxieDev/Free-Streaming)
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
