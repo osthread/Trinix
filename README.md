@@ -5,7 +5,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/MaxieDev/Trinix/">
-    <img src="https://cdn.discordapp.com/attachments/1214431083102470215/1214431115381702697/Untitled_Artwork.png" alt="Logo" width="150" height="80">
+    <img src="og_trinix.png" alt="Logo" width="150" height="80">
   </a>
 
   <h3 align="center">Trinix</h3>
