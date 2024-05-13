@@ -8,7 +8,7 @@
     <img src="og_trinix.png" alt="Logo" width="150" height="80">
   </a>
 
-  <h3 align="center">Trinix</h3>
+  <h3 align="center">Trinix Discord Bot</h3>
 
   <p align="center">
     Trinix is an open-source Discord bot designed to enhance community interaction and management within Discord servers. It's built using Python 3.9 and leverages the Py-cord library, a modern, easy-to-use, feature-rich, and async-ready API wrapper for Discord.
