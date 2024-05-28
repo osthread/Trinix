@@ -19,23 +19,26 @@ class Trinix(commands.Bot):
     def get_bot(self):
         intents = discord.Intents.all()
         intents.members = True
-        trinix = commands.Bot(command_prefix=".", help_command = None, intents = intents)
+        trinix = commands.Bot(command_prefix=">", help_command = None, intents = intents, owner_id = 1028543893383421954)
         return trinix
 
     def main(self):
-        FileNameLst = os.listdir("cogs")
-        for extension in FileNameLst:
-            try:
-                if "_" in extension:
-                    pass
-                else:
-                    self.bot.load_extension(f'cogs.{extension[:-3]}')
-            except Exception as e:
-                print(f'Failed to load extension {extension[:-3]}.', file=sys.stderr)
-                traceback.print_exc()
+        for extension in os.listdir("cogs"):
+            if "_" in extension:
+                pass
+            else:
+                self.bot.load_extension(f'cogs.{extension[:-3]}')
     
         self.bot.run(self.token)
 
+    def bot_login(self):
+        token = self.db_manager.execute_read_one_query("SELECT token FROM auth")
+        if token is None:
+            bot_token = input("Enter bot token: ")
+            owner_id = input("Enter Owner ID: ")
+        else:
+            self.main()
+
 if __name__ == "__main__":
     run = Trinix()
-    run.main()
+    run.bot_login()
