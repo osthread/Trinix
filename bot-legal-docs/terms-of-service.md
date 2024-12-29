@@ -63,5 +63,5 @@ We may update these Terms of Service or the Privacy Policy at any time. Changes 
 
 ## 9. Contact Information
 For questions, concerns, or support, please contact us:
-- **Report**: [https://github.com/osthread/Trinix/issues]
-- **GitHub Repository**: [https://github.com/osthread/Trinix]
+- **Report Issues**: [Issues](https://github.com/osthread/Trinix/issues)
+- **GitHub Repository**: [Repo](https://github.com/osthread/Trinix)
