@@ -1,17 +1,14 @@
 from datetime import datetime
 from discord import message, Webhook
-from discord.ext import commands, tasks
+from discord.ext import commands
 
-from Modules.error.logger import CustomLogger
 from Modules.database.db import DatabaseManager
 
-import discord, logging, aiohttp, timedelta
+import discord, aiohttp
 
 class listener(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        self.custom_logger = CustomLogger('Listener', log_level = logging.INFO)
-        self.logger = self.custom_logger.get_logger()
         self.timestamp = datetime.utcnow().strftime('%Y-%m-%d %I:%M:%S %p UTC')
         self.db_manager = DatabaseManager()
 
