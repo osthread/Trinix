@@ -1,5 +1,4 @@
 from Modules.database.db import DatabaseManager
-from Modules.error.logger import CustomLogger
 from discord.ext import commands
 
 import os, sys, logging, discord, traceback
@@ -7,8 +6,6 @@ import os, sys, logging, discord, traceback
 class Trinix(commands.Bot):
     def __init__(self):
         self.db_manager = DatabaseManager()
-        self.custom_logger = CustomLogger('Main', log_level=logging.INFO)
-        self.logger = self.custom_logger.get_logger()
         self.token = self.get_token()
         self.bot = self.get_bot()
 
