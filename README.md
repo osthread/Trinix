@@ -76,7 +76,7 @@ Ensure you have Python 3.9 installed and then set up the bot using the following
 ## Usage
 
 ```sh
-pm2 start trinix.py --interpreter python3
+pm2 start main.py --interpreter python3
 ```
 
 ```sh
