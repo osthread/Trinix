@@ -4,7 +4,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/MaxieDev/Trinix/">
+  <a href="https://github.com/osthread/Trinix/">
     <img src="og_trinix.png" alt="Logo" width="150" height="80">
   </a>
 
@@ -12,9 +12,6 @@
 
   <p align="center">
     Trinix is an open-source Discord bot designed to enhance community interaction and management within Discord servers. It's built using Python 3.9 and leverages the Py-cord library, a modern, easy-to-use, feature-rich, and async-ready API wrapper for Discord.
-    <br />
-    <a href="https://discord.gg/tloxp/"><strong>Explore the Discord »</strong></a>
-    <br />
   </p>
 </div>
 
@@ -114,6 +111,6 @@ For support, please refer to the [Discord](https://discord.gg/tloxp/).
 
 * Logo by gh0st_artz
 * The library used for this project: [Py-cord](https://github.com/Pycord-Development/pycord)
-* Streaming-Service: [Free-Streaming](https://github.com/MaxieDev/Free-Streaming)
+* Streaming-Service: [Free-Streaming](https://github.com/osthread/Free-Streaming)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
