@@ -112,7 +112,7 @@ class Search(Modal):
             overview = result.get("overview")
 
             embed.add_field(name=f"{title}", value=f"**Overview:** {overview}", inline=False)
-        embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/1187754883303084159/1188395187253284964/3.png")
+        embed.set_thumbnail(url="https://cdn.discordapp.com/emojis/1319528120205967401.png")
         await interaction.response.send_message(embed=embed, view=media_type)
         
 class Movie(commands.Cog):
