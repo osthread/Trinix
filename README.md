@@ -102,7 +102,7 @@ Distributed under the GPL-3.0 License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-For support, please refer to the [Discord](https://discord.gg/tloxp/).
+For support, please refer to the [Issues](https://github.com/osthread/Trinix/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
