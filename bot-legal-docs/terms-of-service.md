@@ -33,7 +33,7 @@ By using the Bot, you agree to:
 ---
 
 ## 4. Data Collection and Privacy
-The Bot may collect certain data as part of its functionality. For details on what data is collected, how it is used, and your rights, refer to our [Privacy Policy](link-to-privacy-policy).
+The Bot may collect certain data as part of its functionality. For details on what data is collected, how it is used, and your rights, refer to our [Privacy Policy](https://github.com/osthread/Trinix/blob/main/bot-legal-docs/privacy-policy.md).
 
 You are responsible for ensuring that all users on your server are aware of the Bot's data collection practices.
 
