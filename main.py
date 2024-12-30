@@ -1,7 +1,7 @@
 from Modules.database.db import DatabaseManager
 from discord.ext import commands
 
-import os, discord
+import os, sys, discord
 
 class Trinix(commands.Bot):
     def __init__(self):
@@ -16,15 +16,28 @@ class Trinix(commands.Bot):
         return trinix
 
     def main(self):
-        token = self.db_manager.execute_read_one_query("SELECT token FROM auth")
+        try:
+            cogs_directory = os.path.join(os.path.dirname(__file__), "Modules")
+            if cogs_directory not in sys.path:
+                sys.path.append(cogs_directory)
 
-        for extension in os.listdir("cogs"):
-            if "_" in extension:
-                pass
-            else:
-                self.bot.load_extension(f'cogs.{extension[:-3]}')
-    
-        self.bot.run(token[0])
+            token = self.db_manager.execute_read_one_query("SELECT token FROM auth")
+            if not token or not token[0]:
+                raise ValueError("Bot token not found in the database.")
+
+            for extension in os.listdir("./Modules/cogs"):
+                if extension.endswith(".py") and "_" not in extension:
+                    try:
+                        self.bot.load_extension(f'Modules.cogs.{extension[:-3]}')
+                        print(f"Loaded extension: {extension}")
+                    except Exception as e:
+                        print(f"Failed to load extension {extension}: {e}")
+                else:
+                    print(f"Ignored file: {extension}")
+                    
+            self.bot.run(token[0])
+        except Exception as e:
+            print(f"An error occurred: {e}")
 
     def bot_login(self):
         token = self.db_manager.execute_read_one_query("SELECT token FROM auth")
