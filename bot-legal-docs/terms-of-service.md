@@ -27,7 +27,7 @@ The Bot is offered "as-is," and we reserve the right to modify, update, or disco
 By using the Bot, you agree to:
 - Follow Discord's Terms of Service and Community Guidelines.
 - Not use the Bot for illegal, harmful, or abusive purposes.
-- Avoid exploiting or reverse-engineering the Bot.
+- No exploiting or reverse-engineering.
 - Ensure the Bot's use does not violate the rules of your Discord server.
 
 ---
