@@ -36,7 +36,6 @@ The data collected by Trinix is used exclusively for the following purposes:
 ## 4. Data Sharing and Disclosure
 Trinix does not sell, rent, or share user data with third parties. However, data may be shared under the following circumstances:
 - If required by law, to comply with legal obligations.
-- To protect the security and integrity of the Bot or its users.
 
 ---
 
