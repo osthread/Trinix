@@ -7,7 +7,7 @@ By using Trinix ("the Bot"), you agree to these Terms of Service ("Terms"). Plea
 ---
 
 ## 1. Acceptance of Terms
-By inviting or using the Bot on your Discord server, you agree to comply with and be bound by these Terms. If you do not agree, you must not use the Bot.
+By inviting or using the Bot on your Discord server, you agree to comply with and be bound by these Terms. If you do not agree, you cannot not use the Bot.
 
 ---
 
